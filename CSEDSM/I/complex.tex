@@ -1,0 +1,261 @@
+%
+% $Id: complex.tex 14 2014-02-04 22:36:30Z nicb $
+%
+\svnInfo $Id: complex.tex 14 2014-02-04 22:36:30Z nicb $
+
+\section{Cosa sono i numeri complessi?\label{sec:cosa}}
+
+\begin{itemize}
+
+	\item qual'\`e il risultato dell'equazione $x^2 + 1 = 0$?
+
+	\item per trovare la soluzione a questa domanda i matematici hanno esteso il
+	dominio dei numeri reali con i numeri \emph{immaginari}, detti anche numeri
+	\emph{complessi}
+
+  \item propriet\`a dei numeri complessi:
+
+		\begin{itemize}
+	
+	  	\item si tratta di numeri bidimensionali
+	          (costituiti di due parti, una parte reale e una parte \emph{immaginaria})
+
+			\item si possono immaginare quindi come numeri che invece di trovarsi su
+						una retta si trovano su un piano
+
+			\item pertanto si perde la possibilit\`a di \emph{ordinarli} in maniera
+			      semplice ($==$ non ha senso dire che ``un numero complesso \`e
+						pi\`u grande o pi\`u piccolo di un altro'')
+
+			\item operazioni sui numeri complessi:
+
+					\begin{description}
+
+					  \item[coniugazione] il \emph{complesso coniugato} di un
+						numero complesso \`e lo stesso numero con la parte immaginaria
+						invertita:
+
+							\begin{equation}
+								z = x + i y, \bar{z} = x - i y
+							\end{equation}
+
+						la moltiplicazione di un numero complesso con il suo complesso
+						coniugato d\`a luogo a un numero reale che \`e il quadrato della
+						parte reale sommato al quadrato della parte immaginaria
+
+		          \begin{equation}
+							 	z \bar{z} = ( x + i y ) ( x - i y ) = x^2 + y^2 + i x y - i x y = x^2 + y^2
+		          \end{equation}
+						
+
+						\item[addizione/sottrazione] si aggiungono
+						e si sottraggono separatamente: parte reale con parte reale e parte immaginaria con parte immaginaria 
+						\item[moltiplicazione] si moltiplicano come nella moltiplicazione
+						di binomi, ricordando per\`o che $i^2 = -1$:
+
+						\begin{equation}
+						   a = x_1 + iy_1,\quad b = x_2 + iy_2\quad\\
+							 a \times b = x_1 x_2 - y_1 y_2 + i \left ( x_1 y_2 x_2 y_1 \right )
+		        \end{equation}
+
+						\item[divisione] le divisioni sono definite negli termini delle
+						moltiplicazioni, moltiplicando entrambi i fattori per il complesso
+						coniugato del denominatore:
+
+						\begin{equation}
+						   z_1 = x_1 + i y_1,\quad z_2 = x_2 + i y_2
+		 				\end{equation}
+		 				\begin{equation}
+							 \frac{z_1}{z_2} = \frac{x_1 + i y_1}{x_2 + i y_2}
+		         \end{equation}
+		         \begin{equation}
+							 \frac{(x_1 + i y_1) \times (x_2 - i y_2)}{(x_2 + i y_2) \times (x_2 - i y_2)}\\
+							 = \left ( \frac{x_1 x_2 + y_1 y_2 }{x_2^2 + y_2^2} \right ) + i \left ( \frac{y_1 x_2 - x_1 y_2}{x_2^2 + y_2^2} \right )
+		 				\end{equation}
+		 				\begin{equation}
+							 \frac{(x_1 x_2 + y_1 y_2) - i (y_1 x_2 + x_1 y_2)}{x_2^2 + y_2^2}
+		        \end{equation}
+
+					\end{description}
+
+			\end{itemize}
+							
+\end{itemize}
+
+\section{Le scomposizioni in serie}
+
+\begin{itemize}
+
+  \item come si calcolano al computer i valori di
+    $e^x$, $sin(x)$, $cos(x)$, ecc.?
+
+	\item si calcolano in forma approssimata \emph{scomponendoli in serie}:
+
+		\begin{equation}
+    	  e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \ldots + \frac{x^n}{n!}
+		\end{equation}
+		\begin{equation}
+       sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \ldots
+		\end{equation}
+		\begin{equation}
+       cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ldots
+		\end{equation}
+
+    se si usano i numeri complessi, si ottiene la formula di Eulero:
+
+		\begin{equation}
+    	e^{ix} = cos(x) + i sin(x)
+		\end{equation}
+
+		(ossia sommando le scomposizioni in serie di $cos(x)$ e $i sin(x)$ e
+		si ottiene la scomposizione in serie di $e^x$)
+
+		dato che $i = 0 + i$, $i^2 = -1$, $i^3 = 0 - i$, $i^4 = 1$, $i^5 = i$, $i^6 = -1$, ecc.
+
+    quindi: $e^x$ va all'infinito, ma $e^{ix}$ oscilla tra $+1$ e $-1$
+
+    dato che anche $i^n$ oscilla invece di andare all'infinito
+
+\end{itemize}
+
+\section{Altre propriet\`a dei numeri complessi}
+
+\begin{itemize}
+
+  \item parte reale:
+
+		\begin{equation}
+			z = x + i y\nonumber
+		 \end{equation}
+		 \begin{equation}
+			Re(z) = x
+		\end{equation}
+
+	\item parte immaginaria:
+
+		\begin{equation}
+			z = x + i y\nonumber
+		 \end{equation}
+		 \begin{equation}
+			Im(z) = y
+		\end{equation}
+
+    attenzione! la ``parte immaginaria'' di un numero complesso \`e costituita
+		da un numero \emph{reale}, il quale viene a sua volta moltiplicato per
+		l'operatore immaginario $i$
+		
+
+  \item modulo: la ``distanza dal centro'', ossia la somma del quadrato della
+	parte reale con il quadrato della parte immaginaria sotto radice:
+
+		 \begin{equation}
+		 	z = x + i y\nonumber
+		 \end{equation}
+		 \begin{equation}
+			abs(z) = \sqrt{x^2 + y^2}
+		 \end{equation}
+
+		 nel caso di fenomeni periodici, \emph{modulo} e \emph{magnitudine} sono
+		 sinonimi
+
+	\item argomento: l'angolo costituito dal numero complesso rispetto all'asse
+	reale
+
+		\begin{equation}
+		 	z = x + i y\nonumber
+		 \end{equation}
+		 \begin{equation}
+			arg ( z ) = \angle{z} = atan \left ( \frac{Im(z)}{Re(z)} \right ) = atan \left ( \frac{y}{x} \right )
+		\end{equation}
+	
+		 nel caso di fenomeni periodici, \emph{argomento} e \emph{fase} sono
+		 sinonimi
+
+\end{itemize}
+
+\subsection{Esercizi}
+
+\begin{itemize}
+
+  \item rifare la dft con $e$ invece che con $sin$/$cos$
+  \item verificare la giustezza della fase 
+
+\end{itemize}
+
+\section{Fasori complessi (cf.\cite[2.4 p.40]{steiglitz1974introduction})}
+
+\begin{itemize}
+
+  \item Abbiamo visto che un oscillatore cosinusoidale pu\`o essere rappresentato come
+segue:
+
+\begin{equation}
+  F(k) = A cos(\omega k + \phi)\quad \textrm{dove}\,k\,\textrm{\`e un intero}
+\end{equation}
+
+(fare il plot di $F(k)$ per valori non--negativi di $k$)
+
+  \item secondo la formula di Eulero,
+	
+		 \begin{equation}
+				F(k) = Re \left ( A e^{i(\omega k + \phi)} \right )
+		 \end{equation}
+
+	\item mentre un oscillatore sinusoidale $F(k) = A sin ( \omega k + \phi)$
+					corrisponde a
+	
+		 \begin{equation}
+				F(k) = Im \left ( A e^{i(\omega k + \phi)} \right )
+		 \end{equation}
+
+	\item quindi $A e^{i(\omega k+ \phi)}$ \`e un \emph{fasore complesso}
+
+  \item interpretazione grafica:
+	
+		\begin{itemize}
+
+			\item un punto che si muove su un cerchio sul piano
+  complesso: A \`e il raggio del cerchio. k sono i punti crescenti sul cerchio
+
+			\item parte reale: coseno campionato
+
+			\item parte immaginaria: seno campionato
+
+			\item $\phi$ \`e il punto di partenza (la fase)
+
+		\end{itemize}
+
+	\item se $\phi = 0$ e $\omega = 0$, il fasore rimane fermo al punto di partenza e $F(k) = A$ (costante reale)
+
+  \item alla fine del giro il fasore ricomincia perch\'e:
+
+		\begin{equation}
+  		e^{i(\omega k+ \phi)} = e^{i(\omega k + \phi + 2 \pi)}
+		\end{equation}
+
+\end{itemize}
+
+\section{Rivisitando \emph{nyquist} e \emph{foldover} con i fasori complessi}
+
+\begin{itemize}
+
+	\item cosa succede se $\omega = \pi$?
+
+  \item e se $\omega > \pi$?
+	
+	\item mettiamo conto che $\omega = \pi + x$:
+
+		 \begin{equation}
+        e^{i\omega k} = e^{i(\pi + x)k}
+		 \end{equation}
+
+  dato che $e^{i(2 \pi k)} = 1$ possiamo aggiungere o togliere $2\pi$ al nostro
+  fasore a piacere:
+
+		 \begin{equation}
+       e^{i\omega k} = e^{i(\pi + x)k} = e^{i(-2\pi + \pi + x)k} = e^{i(-\pi + x)k}
+		 \end{equation}
+
+  quindi sembra che il fasore stia andando all'indietro (effetto stroboscopico)
+
+\end{itemize}

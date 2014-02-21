@@ -1,0 +1,26 @@
+%This document provides the package nesse.sty, a style file
+%which calls a few frequently used packages and defines 
+%some commands useful in typesetting statistics.
+%
+%Feel free to use, edit, rename, or in any other way modify
+%this file.  
+%
+%Edit history
+% March 16, 2007   Created file, Hans Nesse
+
+
+\ProvidesPackage{nesse}
+\usepackage{amsmath,amssymb,mathrsfs,multirow}
+\usepackage{graphicx}
+%\usepackage{natbib}
+\newcommand{\E}{\text{E}}
+\newcommand{\independ}{\perp \! \! \! \perp}
+\newcommand{\notindepend}{\independ \! \! \! \! \! \! / \hspace{2mm}}
+\newcommand{\iid}{\text{ \raisebox{2pt}{$\sim$}} \! \! \! \! \! \!\text{\raisebox{-1pt}{\tiny{i.i.d.}}}}
+\newcommand{\var}{\text{Var}}
+\newcommand{\cor}{\text{Cor}}
+\newcommand{\cov}{\text{Cov}}
+\newcommand{\raiseto}[1]{\to \!\!\!\!\!\!\raisebox{8pt}{{\scriptsize $#1$}} \hspace{5pt}}
+\newcommand{\D}[2]{\frac{\partial #2}{\partial #1}}
+\newcommand{\DD}[2]{\frac{\partial^2 #2}{\partial #1^2}}
+\newcommand{\Dn}[3]{\frac{\partial^#3 #2}{\partial #1^#3}}

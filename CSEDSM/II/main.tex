@@ -1,0 +1,43 @@
+%
+% $Id: main.tex 14 2014-02-04 22:36:30Z nicb $
+%
+\newcommand{\topic}{Campionamento, Sintesi ed Elaborazione dei Segnali Musicali\xspace}
+\newcommand{\topicacro}{CSEDSM\xspace}
+\newcommand{\level}{II\xspace}
+\documentclass{scrbook}
+\usepackage[italian]{babel}
+\usepackage{svninfo}
+\usepackage{fancyvrb}
+\usepackage{paralist}
+\usepackage[italian]{varioref}
+\usepackage{nesse}
+\usepackage{xspace}
+\usepackage{nicefrac}
+
+\newcommand{\imagedir}{./images}
+\newcommand{\plotdir}{./plots}
+\newcommand{\rcstag}{ver.\svnInfoRevision\ \svnInfoDate\xspace}
+\title{\topic (\topicacro) \level\\dispense\\{\tiny (\rcstag)}}
+\author{Nicola Bernardini}
+\date{~}
+
+\setlength{\parsep}{2\baselineskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\svnInfo $Id: main.tex 14 2014-02-04 22:36:30Z nicb $
+
+\maketitle
+
+\tableofcontents
+
+\input{introduction}
+\input{ripasso_FIR}
+\input{IIR}
+\input{comb}
+\input{karplus_strong}
+
+\bibliographystyle{apalike}
+\bibliography{CSEDSMII}
+
+\end{document}
