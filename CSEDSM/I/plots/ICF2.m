@@ -13,8 +13,8 @@ step = 0.01;
 W = [0:step:2*pi-step];
 z = exp(i*W);
 
-H = 1-((R.^(L))*(z.^(-L))); %fn di trasferimento ==> che diventa la risp in freq per via di z 
-figure(1, 'visible', 'off')
+H = 1-((R.^(L))*(z.^(-L))); %fn di trasferimento ==> che diventa 
+figure(1, 'visible', 'off') % la risp in freq per via di z 
 subplot (2,1,1)
 plot (W,20*log10(abs(H)), 'LineWidth', 2);
 subplot(2,1,2)
@@ -22,7 +22,9 @@ plot (W,arg(H), 'LineWidth', 2);
 %PRINT 1
 
 figure(2, 'visible', 'off')
-coefs = zeros(1,L+1); % L+1 coefficienti (include anche lo zero), dal più alto al più basso
+% L+1 coefficienti (include anche lo zero),
+% dal più alto al più basso
+coefs = zeros(1,L+1);
 coefs(L+1) = 1; % coefficiente zero (ultimo)
 coefs(1) = -R^L; % coefficiente L-esimo (primo)
 zri = roots(coefs);
