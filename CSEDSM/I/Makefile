@@ -3,9 +3,9 @@
 #
 COURSELEVEL=I
 TARGET=dispense-CSEDSM-$(COURSELEVEL).pdf
-SOURCES=$(MAIN)
+SOURCES=$(MAIN).tex
 DEPENDENCIES=introduction.tex complex.tex z_transform.tex FIR.tex piano_z.tex fase.tex icf.tex filter_design.tex
-MAIN=main.tex
+MAIN=main
 LATEX=pdflatex
 BIBTEX=bibtex
 MV=mv
@@ -16,7 +16,7 @@ all: $(TARGET)
 
 $(TARGET): images plots $(SOURCES) $(DEPENDENCIES)
 	$(LATEX) $(MAIN)
-	$(BIBTEX) $(MAIN:.tex=)
+	$(BIBTEX) $(MAIN)
 	$(RM) $@
 	$(LATEX) $(MAIN)
 	$(RM) $@
