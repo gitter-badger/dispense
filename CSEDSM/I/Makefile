@@ -17,9 +17,9 @@ all: $(TARGET)
 $(TARGET): images plots $(SOURCE) $(DEPENDENCIES)
 	$(LATEX) $(MAIN)
 	$(BIBTEX) $(MAIN)
-	$(RM) $@
+	$(RM) $(MAIN).pdf
 	$(LATEX) $(MAIN)
-	$(RM) $@
+	$(RM) $(MAIN).pdf
 	$(LATEX) $(MAIN)
 	$(MV) $(SOURCE:.tex=.pdf) $@
 
