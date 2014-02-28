@@ -3,7 +3,7 @@
 #
 COURSELEVEL=I
 TARGET=dispense-CSEDSM-$(COURSELEVEL).pdf
-SOURCES=$(MAIN).tex
+SOURCE=$(MAIN).tex
 DEPENDENCIES=introduction.tex complex.tex z_transform.tex FIR.tex piano_z.tex fase.tex icf.tex filter_design.tex
 MAIN=main
 LATEX=pdflatex
@@ -14,14 +14,14 @@ PLOTDIR=./plots
 
 all: $(TARGET)
 
-$(TARGET): images plots $(SOURCES) $(DEPENDENCIES)
+$(TARGET): images plots $(SOURCE) $(DEPENDENCIES)
 	$(LATEX) $(MAIN)
 	$(BIBTEX) $(MAIN)
 	$(RM) $@
 	$(LATEX) $(MAIN)
 	$(RM) $@
 	$(LATEX) $(MAIN)
-	$(MV) $(MAIN:.tex=.pdf) $@
+	$(MV) $(SOURCE:.tex=.pdf) $@
 
 clean:
 	$(RM) *.aux *.log *.toc *.blg *.bbl *.pdf $(TARGET)
