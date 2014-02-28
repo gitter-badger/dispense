@@ -2,9 +2,9 @@
 # $Id: Makefile 14 2014-02-04 22:36:30Z nicb $
 #
 TARGET=dispense-CSEDSM-II.pdf
-SOURCES=$(MAIN)
+SOURCE=$(MAIN).tex
 DEPENDENCIES=ripasso_FIR.tex IIR.tex comb.tex
-MAIN=main.tex
+MAIN=main
 LATEX=pdflatex
 BIBTEX=bibtex
 MV=mv
@@ -13,14 +13,14 @@ PLOTDIR=./plots
 
 all: $(TARGET)
 
-$(TARGET): images plots $(SOURCES) $(DEPENDENCIES)
+$(TARGET): images plots $(SOURCE) $(DEPENDENCIES)
 	$(LATEX) $(MAIN)
 	$(BIBTEX) $(MAIN:.tex=)
-	$(RM) $@
+	$(RM) $(MAIN).pdf
 	$(LATEX) $(MAIN)
-	$(RM) $@
+	$(RM) $(MAIN).pdf
 	$(LATEX) $(MAIN)
-	$(MV) $(MAIN:.tex=.pdf) $@
+	$(MV) $(MAIN).pdf $@
 
 clean:
 	$(RM) *.aux *.log *.toc *.blg *.bbl *.pdf $(TARGET)
