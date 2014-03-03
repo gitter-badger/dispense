@@ -4,7 +4,7 @@
 COURSELEVEL=I
 TARGET=dispense-CSEDSM-$(COURSELEVEL).pdf
 SOURCE=$(MAIN).tex
-DEPENDENCIES=introduction.tex complex.tex z_transform.tex FIR.tex piano_z.tex fase.tex icf.tex filter_design.tex
+DEPENDENCIES=introduction.tex complex.tex z_transform.tex FIR.tex piano_z.tex fase.tex icf.tex filter_design.tex convoluzione.tex
 MAIN=main
 LATEX=pdflatex
 BIBTEX=bibtex
