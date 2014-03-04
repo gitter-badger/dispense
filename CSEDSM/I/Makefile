@@ -9,8 +9,9 @@ MAIN=main
 LATEX=pdflatex
 BIBTEX=bibtex
 MV=mv
-IMAGEDIR=./images
-PLOTDIR=./plots
+TOP=..
+IMAGEDIR=$(TOP)/images
+PLOTDIR=$(TOP)/plots
 
 all: $(TARGET)
 

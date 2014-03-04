@@ -14,8 +14,9 @@
 \usepackage{xspace}
 \usepackage{nicefrac}
 
-\newcommand{\imagedir}{./images}
-\newcommand{\plotdir}{./plots}
+\newcommand{\rootdir}{..}
+\newcommand{\imagedir}{\rootdir/images}
+\newcommand{\plotdir}{\rootdir/plots}
 \newcommand{\rcstag}{ver.\svnInfoRevision\ \svnInfoDate\xspace}
 \title{\topic (\topicacro) \level\\dispense\\{\tiny (\rcstag)}}
 \author{Nicola Bernardini}
@@ -32,12 +33,14 @@
 \tableofcontents
 
 \input{introduction}
+\chapter{Un ripasso dei filtri FIR\label{chap:fir}}
 \input{ripasso_FIR}
+
 \input{IIR}
 \input{comb}
 \input{karplus_strong}
 
 \bibliographystyle{apalike}
-\bibliography{CSEDSMII}
+\bibliography{\rootdir/CSEDSM}
 
 \end{document}

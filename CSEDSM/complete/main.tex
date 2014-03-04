@@ -3,7 +3,6 @@
 %
 \newcommand{\topic}{Campionamento, Sintesi ed Elaborazione dei Segnali Musicali\xspace}
 \newcommand{\topicacro}{CSEDSM\xspace}
-\newcommand{\level}{I\xspace}
 \documentclass{scrbook}
 \usepackage{graphicx}
 \usepackage[italian]{babel}
@@ -17,10 +16,11 @@
 \usepackage{verbatim}
 \usepackage{soul}
 \usepackage{mathabx}
+\usepackage{nicefrac}
 
-\newcommand{\rootdir}{..}
-\newcommand{\imagedir}{\rootdir/images}
-\newcommand{\plotdir}{\rootdir/plots}
+\newcommand{\dirroot}{..}
+\newcommand{\imagedir}{\dirroot/images}
+\newcommand{\plotdir}{\dirroot/plots}
 \newcommand{\rcstag}{ver.\svnInfoRevision\ \svnInfoDate\xspace}
 \newcommand{\cpholder}{Nicola Bernardini}
 \newcommand{\cpyear}{2013}
@@ -31,7 +31,7 @@
 }
 
 \title{%
-	\topic (\topicacro) \level\\dispense\\{\tiny (\rcstag)}%
+	\topic (\topicacro)\\dispense\\{\tiny (\rcstag)}%
 }
 \author{Nicola Bernardini\\[2cm]\license}
 \date{~}
@@ -52,11 +52,13 @@
 
 \input{introduction}
 
-\chapter{Introduzione ai numeri complessi\label{chap:complex numbers}}
+\chapter{Fondamentali\label{chap:fundamentals}}
 
 \input{complex}
 
-\chapter{La convoluzione\label{chap:convolution}}
+\input{piano_z}
+
+\input{z_transform}
 
 \input{convoluzione}
 
@@ -64,25 +66,21 @@
 
 \input{FIR}
 
-\chapter{Funzioni di variabile complessa\label{chap:complex variable functions}}
-
-\input{piano_z}
-
-\chapter{La risposta in fase dei filtri FIR\label{chap:FIR phase response}}
+\input{ripasso_FIR}
 
 \input{fase}
 
-\chapter{I filtri comb inversi\label{chap:icf}}
-
 \input{icf} % inverse comb filters
-
-\chapter{La progettazione dei filtri FIR\label{chap:filter design}}
 
 \input{filter_design}
 
-% \input{z_transform}
+\input{IIR}
+
+\input{comb}
+
+\input{karplus_strong}
 
 \bibliographystyle{apalike}
-\bibliography{\rootdir/CSEDSM}
+\bibliography{\dirroot/CSEDSM}
 
 \end{document}
