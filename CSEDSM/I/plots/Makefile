@@ -2,9 +2,9 @@
 # $Id: Makefile 14 2014-02-04 22:36:30Z nicb $
 #
 TARGETS=fir2.pdf fir3.pdf zplane.pdf fase_3.pdf
-MULTITARGETS=ICF2_1.pdf ICF2_2.pdf ICF2_3.pdf
+MULTITARGETS=ICF2_1.pdf ICF2_2.pdf ICF2_3.pdf conv_noise_and_saw_1.pdf conv_noise_and_saw_2.pdf conv_noise_and_saw_3.pdf
 SOURCES=$(TARGETS:.pdf=.m)
-MULTISOURCES=ICF2.m
+MULTISOURCES=ICF2.m conv_noise_and_saw.m
 MATLAB=octave -q
 SVG2PDF=inkscape -d 150
 SED=sed

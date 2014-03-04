@@ -118,3 +118,44 @@ dove $N$ \`e il numero dei campioni in ingresso e $M$ \`e il numero dei campioni
 % subsection: la convoluzione di due segnali equivale alla moltiplicazione dei
 %             loro spettri (fare rumore bianco per dente di sega rovesciato)
 %
+\subsection{Convoluzione e spettri}
+
+La convoluzione di due segnali equivale alla moltiplicazione delle magnitudini
+delle loro rappresentazioni in frequenza (spettri).
+
+Facciamo il seguente esperimento:
+prendiamo del rumore bianco (rappresentato nel dominio del tempo e nel dominio
+della frequenza in Fig.\vref{fig:white noise}).
+
+\begin{figure}[hbt]
+  \begin{center}
+	  \includegraphics[width=0.8\textwidth]{\plotdir/conv_noise_and_saw_1}
+   \end{center}
+	\caption{Rumore bianco nel dominio del tempo e in quello della frequenza\label{fig:white noise}}
+\end{figure}
+
+Usiamo un'onda a dente di sega (rappresentata in Fig.\vref{fig:sawtooth}) come
+risposta all'impulso.
+
+\begin{figure}[hbt]
+  \begin{center}
+	  \includegraphics[width=0.8\textwidth]{\plotdir/conv_noise_and_saw_2}
+  \end{center}
+	\caption{Onda a dente di sega nel dominio del tempo e in quello della frequenza\label{fig:sawtooth}}
+\end{figure}
+
+Convolvendo il rumore bianco per l'onda a dente di sega otterremo la
+moltiplicazione delle magnitudini delle due rappresentazioni spettali (cf.
+Fig.\vref{fig:noise and saw convolved}),
+
+\begin{figure}[hbt]
+  \begin{center}
+	  \includegraphics[width=0.8\textwidth]{\plotdir/conv_noise_and_saw_3}
+  \end{center}
+	\caption{Convoluzione dei due segnali\label{fig:noise and saw convolved}}
+\end{figure}
+
+Il codice {\tt matlab/octave} che produce questi grafici \`e riportato qui di
+seguito:
+
+\verbatiminput{\plotdir/conv_noise_and_saw.m}
