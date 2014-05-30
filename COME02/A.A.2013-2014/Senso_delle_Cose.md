@@ -1,5 +1,5 @@
 
-# Il senso delle cose (con esercizi)
+## Il senso delle cose (con esercizi)
 
 Cos'è che dà il senso all'agire dei compositori?
 Analisi dei molteplici "veicoli di senso" che possono o meno sottostare a una
