@@ -12,3 +12,16 @@ Bernardini:
     - in termini narrativi (confronto con altre arti)
   - Esercizio sulla forma?
 
+
+
+Massimi:
+- Rapporto tra forma e materiali. 
+
+Bernardini:
+- Forma e durata. Occupazione dello spazio temporale.
+
+Ziello:
+- ha detto “poetica”
+
+Esercizio:
+- delineare una forma musicale astratta 
