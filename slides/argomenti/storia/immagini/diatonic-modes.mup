@@ -1,0 +1,45 @@
+// vi:set nowrap:
+//
+// $Id: diatonic-modes.mup 77 2009-06-29 20:47:13Z nicb $
+//
+// whole-tone scales
+//
+header
+score
+time=8/1n
+packfact=0.8
+pagewidth=7
+pageheight=6
+staffs=1
+stafflines=5
+music
+1: 1c; 1d; 1e; 1f; 1g; 1a; 1b; 1c+;
+rom (14) above 1:1 "Do Ionico";
+dblbar
+1: 1c; 1d; 1e&; 1f; 1g; 1a; 1b&; 1c+;
+rom (14) above 1:1 "Do Dorico";
+dblbar
+1: 1c; 1d&; 1e&; 1f; 1g; 1a&; 1b&; 1c+;
+rom (14) above 1:1 "Do Frigio";
+dblbar
+1: 1c; 1d; 1e; 1f#; 1g; 1a; 1b; 1c+;
+rom (14) above 1:1 "Do Lidio";
+dblbar
+1: 1c; 1d; 1e; 1f; 1g; 1a; 1b&; 1c+;
+rom (14) above 1:1 "Do Misolidio";
+dblbar
+1: 1c; 1d; 1e&; 1f; 1g; 1a&; 1b&; 1c+;
+rom (14) above 1:1 "Do Eolico";
+dblbar
+1: 1c; 1d&; 1e&; 1f; 1g&; 1a&; 1b&; 1c+;
+rom (14) above 1:1 "Do Locrio";
+dblbar
+//
+// $Log$
+// Revision 1.1  1999/11/11 16:33:10  nicb
+// [changes by nicb@axnet.it]
+//
+// - added 2nd lesson
+// - added TODO file
+// - separated orc and scos with a single orc file and multiple scos
+//

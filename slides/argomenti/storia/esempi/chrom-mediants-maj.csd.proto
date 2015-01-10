@@ -1,0 +1,86 @@
+<CsoundSynthesizer>
+; vi:set nowrap:
+;
+; $Id: chrom-mediants-maj.csd.proto 76 2009-06-26 22:44:04Z nicb $
+;
+; lessons sound examples using the piano samples in
+; the sounds directory (use with SSDIR=../../../sounds)
+; 
+;
+<CsOptions>
+</CsOptions>
+<CsInstruments>
+		sr=44100
+		kr=4410
+		ksmps=10
+		nchnls=1
+
+		instr	1
+		isound=p4
+		iratio=p5
+
+aout		diskin	isound,iratio,0,0
+		out	aout*0.3
+
+		endin
+</CsInstruments>
+<CsScore>
+;
+;		instr	1
+;		isound=p4
+;		iratio=p5
+;
+t 0 120
+;
+; format is: p4 can be [fmp] and represent the dynamics of sample
+;            p5 is in <base note>:<interval>
+;
+; bar 1
+;
+i1 0 4 m g#3:-1
+i1 0 4 m g#3:3
+i1 0 4 m g#3:6
+;
+i1 4 8 m g#3:3
+i1 4 8 m f#4:-3
+i1 4 8 m f#4:0
+;
+s
+;
+; bar 2 
+;
+i1 0 4 m g#3:-1
+i1 0 4 m g#3:3
+i1 0 4 m g#3:6
+;
+i1 4 8 m g#3:-5
+i1 4 8 m g#3:-1
+i1 4 8 m g#3:2
+;
+s
+;
+; bar 3 
+;
+i1 0 4 m g#3:-1
+i1 0 4 m g#3:3
+i1 0 4 m g#3:6
+;
+i1 4 8 m g#3:2
+i1 4 8 m f#4:-4
+i1 4 8 m f#4:-1
+;
+s
+;
+; bar 4 
+;
+i1 0 4 m g#3:-1
+i1 0 4 m g#3:3
+i1 0 4 m g#3:6
+;
+i1 4 8 m g#3:-4
+i1 4 8 m g#3:0
+i1 4 8 m g#3:3
+;
+e
+</CsScore>
+</CsoundSynthesizer>

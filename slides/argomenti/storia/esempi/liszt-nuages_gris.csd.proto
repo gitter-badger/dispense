@@ -1,0 +1,189 @@
+<CsoundSynthesizer>
+; vi:set nowrap:
+;
+; $Id: liszt-nuages_gris.csd.proto 76 2009-06-26 22:44:04Z nicb $
+;
+; lessons sound examples using the piano samples in
+; the sounds directory (use with SSDIR=../../../sounds)
+; 
+;
+<CsOptions>
+</CsOptions>
+<CsInstruments>
+		sr=44100
+		kr=4410
+		ksmps=10
+		nchnls=1
+
+		instr	1,2,3,4,5
+		isound=p4
+		iratio=p5
+
+aout		diskin	isound,iratio,0,0
+		out	aout*0.3
+
+		endin
+</CsInstruments>
+<CsScore>
+;
+;		instr	1
+;		isound=p4
+;		iratio=p5
+;
+t 0 96
+;
+; format is: p4 can be [fmp] and represent the dynamics of sample
+;            p5 is in <base note>:<interval>
+;
+; bar 1
+;
+i1 0 2.2 f g1:3
+;
+i2 1 1 p f2:1
+i2 2 1 p d#3:-5
+i2 2 1 p d#3:0
+i2 3 1 p f2:1
+;
+i3 2 4 p g#3:-2
+i3 2 4 p f#4:0
+;
+i1 4 2.2 f g1:2
+;
+i2 5 1 p f2:1
+i2 6 1 p d#3:-5
+i2 6 1 p d#3:0
+i2 7 1 p f2:1
+;
+i3 6 4 p g#3:-1
+i3 6 4 p f#4:1
+;
+i1 8 2.2 f g1:3
+;
+i2 9 1 p f2:1
+i2 10 1 p d#3:-5
+i2 10 1 p d#3:-1
+i2 11 1 p f2:1
+;
+i3 10 2 p g#3:0
+i3 10 2 p f#4:2
+;
+s 2
+t 0 96
+;
+i1 0 2.2 f g1:2
+;
+i2 1 1 p f2:1
+i2 2 1 p d#3:-5
+i2 2 1 p d#3:-1
+i2 3 1 p f2:1
+;
+i3 0 2 p g#3:1
+i3 0 2 p b4:-2
+i3 2 2 p g#3:2
+i3 2 2 p b4:-1
+;
+s 3
+t 0 96
+;
+i1 0 2.2 f g1:3
+;
+i2 1 1 p f2:0
+i2 2 1 p f2:4
+i2 2 1 p d#3:-2
+i2 3 1 p f2:0
+;
+i3 2 4 p g#3:3
+i3 2 4 p b4:0
+;
+i1 4 2.2 f g1:2
+;
+i2 5 1 p f2:0
+i2 6 1 p f2:4
+i2 6 1 p d#3:-2
+i2 7 1 p f2:0
+;
+i3 6 4 p g#3:4
+i3 6 4 p b4:1
+;
+i1 8 2.2 f g1:3
+;
+i2 9 1 p f2:-1
+i2 10 1 p f2:3
+i2 10 1 p d#3:-3
+i2 11 1 p f2:-1
+;
+i3 10 2 p f#4:-5
+i3 10 2 p b4:2
+;
+s 4
+t 0 96
+;
+i1 0 2.2 f g1:2
+;
+i2 1 1 p f2:-1
+i2 2 1 p f2:3
+i2 2 1 p d#3:-3
+i2 3 1 p f2:-1
+;
+i3 0 2 p f#4:-4
+i3 0 2 p b4:3
+i3 2 2 p f#4:-3
+i3 2 2 p b4:4
+;
+s 5
+t 0 96
+;
+i1 0 2.2 f g1:3
+;
+i2 1 1 p f2:-2
+i2 2 1 p f2:2
+i2 2 1 p d#3:-4
+i2 3 1 p f2:-2
+;
+i3 2 4 p f#4:-3
+i3 2 4 p b4:4
+;
+i1 4 2.2 f g1:2
+;
+i2 5 1 p f2:-2
+i2 6 1 p f2:2
+i2 6 1 p d#3:-4
+i2 7 1 p f2:-2
+;
+i3 6 4 p f#4:-2
+i3 6 4 p b4:5
+;
+i1 8 1.8 p g1:2
+;
+i3 10 4 p f#4:-1
+i3 10 4 p b4:6
+;
+i3 14 2 p f#4:0
+i3 14 2 p b4:7
+;
+f0 20 ; one bar empty
+;
+s 6
+t 0 80
+;
+i1 0     4 p f2:4
+i1 0.05  4 p d#3:0
+i1 0.1   4 p g#3:-1
+i1 0.15  4 p g#3:3
+i1 0.2   4 p f#4:0
+i1 0.25  4 p b4:0
+i1 0.3   4 p b4:7
+;
+s 7
+t 0 72
+;
+i1 0     8 p f2:4
+i1 0.05  8 p d#3:0
+i1 0.1   8 p g#3:-1
+i1 0.15  8 p g#3:3
+i1 0.2   8 p f#4:1
+i1 0.25  8 p b4:0
+i1 0.3   8 p b4:8
+e
+</CsScore>
+</CsoundSynthesizer>

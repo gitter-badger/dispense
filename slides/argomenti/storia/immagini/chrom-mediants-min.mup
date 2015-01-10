@@ -1,0 +1,33 @@
+// vi:set nowrap:
+//
+// $Id: chrom-mediants-min.mup 76 2009-06-26 22:44:04Z nicb $
+//
+// chromatic mediants examples - minor chords
+//
+header
+score
+time=4/2n
+pagewidth=7
+pageheight=2
+staffs=1
+stafflines=5
+music
+1: 1gb&d+; 1bd+f#+;
+lyrics 1: 1; 1; "sol si";
+bar
+1: 1gb&d+; 1e&g&b&;
+lyrics 1: 1; 1; "sol mi\s(-4)\(flat)\s(+4)";
+bar
+1: 1gb&d+; 1b&d&+f+;
+lyrics 1: 1; 1; "sol si\s(-4)\(flat)\s(+4)";
+bar
+1: 1gb&d+; 1egb;
+lyrics 1: 1; 1; "sol mi";
+bar
+//
+// $Log: chrom-mediants-min.mup,v $
+// Revision 1.1  1999/11/03 07:17:13  nicb
+// [changes by nicb@axnet.it]
+//
+// - Initial Revision of lesson 1
+//

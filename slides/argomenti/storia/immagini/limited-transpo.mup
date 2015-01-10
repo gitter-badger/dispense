@@ -1,0 +1,33 @@
+// vi:set nowrap:
+//
+// $Id: limited-transpo.mup 77 2009-06-29 20:47:13Z nicb $
+//
+// whole-tone scales
+//
+header
+score
+time=10/1n
+pagewidth=7
+pageheight=6
+staffs=1
+stafflines=5
+music
+1: 1c; 1c#; 1d; 1d#; 1e; 1f#; 1g; 1g#; 1a; 1a#;
+rom (18) above 1:1 "(2 trasposizioni)";
+dblbar
+newscore
+score
+time=6/1n
+music
+1: 1c; 1c#; 1e; 1f; 1g#; 1a; 
+rom (18) above 1:1 "(tre trasposizioni)";
+dblbar
+//
+// $Log$
+// Revision 1.1  1999/11/11 16:33:10  nicb
+// [changes by nicb@axnet.it]
+//
+// - added 2nd lesson
+// - added TODO file
+// - separated orc and scos with a single orc file and multiple scos
+//

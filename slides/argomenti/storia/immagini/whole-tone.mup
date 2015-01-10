@@ -1,0 +1,29 @@
+// vi:set nowrap:
+//
+// $Id: whole-tone.mup 77 2009-06-29 20:47:13Z nicb $
+//
+// whole-tone scales
+//
+header
+score
+time=14/2n
+pagewidth=7
+pageheight=2
+staffs=1
+stafflines=5
+music
+1: 1c; 1d; 1e; 1f#; 1g#; 1a#; 1c+;
+rom (18) above 1:1 "WT-0";
+dblbar
+1: 1d&; 1e&; 1f; 1g; 1a; 1b; 1d&+;
+rom (18) above 1:1 "WT-1";
+dblbar
+//
+// $Log$
+// Revision 1.1  1999/11/11 16:33:10  nicb
+// [changes by nicb@axnet.it]
+//
+// - added 2nd lesson
+// - added TODO file
+// - separated orc and scos with a single orc file and multiple scos
+//

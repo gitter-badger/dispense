@@ -1,0 +1,83 @@
+<CsoundSynthesizer>
+; vi:set nowrap:
+;
+; $Id: petruschka.csd.proto 76 2009-06-26 22:44:04Z nicb $
+;
+; lessons sound examples using the piano samples in
+; the sounds directory (use with SSDIR=../../../sounds)
+; 
+;
+<CsOptions>
+</CsOptions>
+<CsInstruments>
+		sr=44100
+		kr=4410
+		ksmps=10
+		nchnls=1
+
+		instr	1,2,3,4,5,6,7,8,9,10
+		isound=p4
+		iratio=p5
+
+aout		diskin	isound,iratio,0,0
+aout		linen	aout,0,p3,0.05
+		out	aout*0.3
+
+		endin
+</CsInstruments>
+<CsScore>
+;
+;		instr	1
+;		isound=p4
+;		iratio=p5
+;
+;
+; format is: p4 can be [fmp] and represent the dynamics of sample
+;            p5 is in <base note>:<interval>
+;
+t 0 96
+;
+; lower voice
+;
+i1  0.33  3.6  p d#3:-2
+;
+i1  4.00  0.17 p d#3:-2
+i1  4.166 0.17 p g#3:-2
+i1  4.33  0.17 p g#3:2
+i1  4.5   1.67 p g#3:5
+i1  6.166 0.17 p g#3:2
+i1  6.33  0.17 p g#3:-2
+i1  6.5   0.17 p d#3:-2
+i1  6.666 0.17 p g#3:-2
+i1  6.833 0.17 p g#3:2
+;
+i1  7     0.17 p g#3:5
+i1  7.166 0.17 p g#3:2
+i1  7.33  0.17 p g#3:-2
+i1  7.5   0.17 p d#3:-2
+;
+; upper voice
+;
+i2  1.75  0.3  m g#3:0
+i2  2     0.75 p g#3:-1
+i2  2.75  0.3  m g#3:0
+i2  3     0.75 p g#3:-1
+i2  3.75  0.3  p g#3:0
+;
+i2  4.00  0.17 p g#3:-1
+i2  4.166 0.17 m g#3:3
+i2  4.33  0.17 f f#4:-4
+i2  4.5   1.67 f f#4:1
+i2  6.166 0.17 m f#4:-2
+i2  6.33  0.17 p g#3:4
+i2  6.5   0.17 p g#3:-1
+i2  6.666 0.17 m g#3:3
+i2  6.833 0.17 f f#4:-4
+;
+i2  7     0.17 f f#4:1
+i2  7.166 0.17 m f#4:-2
+i2  7.33  0.17 p g#3:4
+i2  7.5   1.5  p g#3:-1
+e
+</CsScore>
+</CsoundSynthesizer>

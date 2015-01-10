@@ -1,0 +1,142 @@
+<CsoundSynthesizer>
+; vi:set nowrap:
+;
+; $Id: gotterdammerung.csd.proto 76 2009-06-26 22:44:04Z nicb $
+;
+; lessons sound examples using the piano samples in
+; the sounds directory (use with SSDIR=../../../sounds)
+; 
+;
+<CsOptions>
+</CsOptions>
+<CsInstruments>
+		sr=44100
+		kr=4410
+		ksmps=10
+		nchnls=1
+
+		instr	1,2,3,4,5,6,7,8,9,10
+		isound=p4
+		iratio=p5
+
+aout		diskin	isound,iratio,0,0
+aout		linen	aout,0,p3,0.05
+		out	aout*0.3
+
+		endin
+</CsInstruments>
+<CsScore>
+;
+;		instr	1
+;		isound=p4
+;		iratio=p5
+;
+;
+; format is: p4 can be [fmp] and represent the dynamics of sample
+;            p5 is in <base note>:<interval>
+;
+t 0 160
+;
+; bass drone
+;
+i10 2 10.5 f d1:-2
+;
+; lower voice
+;
+i1  2   2.5 m g1:2
+i1  4.5 0.55 m g1:2
+i1  5   0.55 m g1:3
+i1  5.5 0.55 m g1:4
+i1  6   0.55 m g1:5
+i1  6.5 0.55 m f2:-4
+i1  7   0.55 m f2:-3
+i1  7.5 0.55 m f2:-2
+;
+i1  8   0.55 m f2:-1
+i1  8.5 0.55 m f2:0
+i1  9   0.55 m f2:1
+i1  9.5 0.55 m f2:2
+i1 10   0.55 m f2:3
+i1 10.5 0.55 m f2:4
+i1 11   0.55 m f2:5
+i1 11.5 0.55 m d#3:-4
+;
+i1 12    0.33 m d#3:-3
+i1 12.33 0.33 m d#3:-2
+i1 12.66 0.33 m d#3:-3
+;
+; medium-lower voice
+;
+i2  2   2.5 m f2:-2
+i2  4.5 0.55 m f2:-2
+i2  5   0.55 m f2:-1
+i2  5.5 0.55 m f2:0
+i2  6   0.55 m f2:1
+i2  6.5 0.55 m f2:2
+i2  7   0.55 m f2:3
+i2  7.5 0.55 m f2:4
+;
+i2  8   0.55 m f2:5
+i2  8.5 0.55 m d#3:-4
+i2  9   0.55 m d#3:-3
+i2  9.5 0.55 m d#3:-2
+i2 10   0.55 m d#3:-1
+i2 10.5 0.55 m d#3:0
+i2 11   0.55 m d#3:1
+i2 11.5 0.55 m d#3:2
+;
+i2 12    0.33 m d#3:3
+i2 12.33 0.33 m g#3:-1
+i2 12.66 0.33 m d#3:3
+;
+; medium-upper voice
+;
+i3  2   2.5 m f2:1
+i3  4.5 0.55 m f2:1
+i3  5   0.55 m f2:2
+i3  5.5 0.55 m f2:3
+i3  6   0.55 m f2:4
+i3  6.5 0.55 m f2:5
+i3  7   0.55 m d#3:-4
+i3  7.5 0.55 m d#3:-3
+;
+i3  8   0.55 m d#3:-2
+i3  8.5 0.55 m d#3:-1
+i3  9   0.55 m d#3:0
+i3  9.5 0.55 m d#3:1
+i3 10   0.55 m d#3:2
+i3 10.5 0.55 m g#3:-2
+i3 11   0.55 m g#3:-1
+i3 11.5 0.55 m g#3:0
+;
+i3 12    0.33 m g#3:1
+i3 12.33 0.33 m g#3:2
+i3 12.66 0.33 m g#3:1
+;
+; upper voice
+;
+i4  2   2.5 m d#3:-2
+i4  4.5 0.55 m d#3:-2
+i4  5   0.55 m d#3:-1
+i4  5.5 0.55 m d#3:0
+i4  6   0.55 m d#3:1
+i4  6.5 0.55 m d#3:2
+i4  7   0.55 m g#3:-2
+i4  7.5 0.55 m g#3:-1
+;
+i4  8   0.55 m g#3:0
+i4  8.5 0.55 m g#3:1
+i4  9   0.55 m g#3:2
+i4  9.5 0.55 m g#3:3
+i4 10   0.55 m g#3:4
+i4 10.5 0.55 m g#3:5
+i4 11   0.55 m f#4:-4
+i4 11.5 0.55 m f#4:-3
+;
+i4 12    0.4 m f#4:-2
+i4 12.33 0.4 m f#4:-1
+i4 12.66 0.4 m f#4:-2
+;
+e
+</CsScore>
+</CsoundSynthesizer>

@@ -1,0 +1,43 @@
+// vi:set nowrap:
+//
+// $Id: nono-canto-sospeso-II-rhythmic-strand-base.mup 80 2009-07-14 05:43:41Z nicb $
+//
+// Nono - Canto Sospeso rhythmic row (1)
+//
+header
+score
+time=2/4n
+beamstyle=4,4
+pagewidth=7
+pageheight=6
+staffs=4
+stafflines=1
+clef=treble
+music
+1: 8c; 4.c~;
+lyrics 1: 8; 4.; "x1 x8";
+2: { 4c; 8c~; }3; 4c~;
+lyrics 2: { 4; 8; }3; 4; "x2 x13 <>";
+3: 8.c; 16c~; 4c~;
+lyrics 3:  8.; 16; 4; "x3 x13 <>";
+4: 4c; 4c~;
+lyrics 4:  4; 4; "x5 x8";
+bar
+1: 2c~;
+2: 2c~;
+3: 2c;
+4: { 8.c; 8c~; }5; { 8.c; 8c~; }5;
+lyrics 4:  { 8.; 8; }5; { 8.; 8; }5; "<> x5 <> x3";
+bar
+1: 8c; 4.s;
+2: 8c; 4.s;
+3: 8c; 4.s;
+lyrics 3: 8; 4.; "x2 <>";
+4: { 16c; 16c; 8.s; }5; 4s;
+lyrics 4: { 16; 16; 8.; }5; 4; "<> x1 <> <>";
+invisbar
+//
+// $Log$
+// Revision 1.1  1999/12/07 13:46:58  nicb
+// added lesson 6 (somewhat incomplete)
+//

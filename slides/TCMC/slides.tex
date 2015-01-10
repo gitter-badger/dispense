@@ -1,0 +1,269 @@
+
+% $Id: slides.tex 8 2014-02-04 21:01:21Z nicb $
+%
+% Copyright (C) 2007-2009 Nicola Bernardini nicb@sme-ccppd.org
+% 
+% This work is licensed under a Creative Commons License, and specifically the
+% 
+%   Creative Commons Attribution-ShareAlike 2.5 License
+%   http://creativecommons.org/licenses/by-sa/2.5/legalcode
+% 
+% Check http://www.creativecommons.org/ for more information on
+% Creative Commons Licenses and the Creative Commons Project.
+%
+% Set the macros below to whatever is appropriate in a given context
+%
+
+\newcommand{\AnnoAccademico}{2008-2009}
+\newcommand{\argroot}{../../argomenti/storia}
+\newcommand{\beamerslides}{\argroot/beamer}
+\newcommand{\imagedir}{\argroot/immagini}
+\newcommand{\exampledir}{\argroot/esempi}
+\newcommand{\templatedir}{../../../Elettroacustica/latex/beamer/sme-ccppd}
+\newcommand{\datadir}{.}
+\documentclass[\printmode,compress,xcolor=dvipsnames]{beamer}
+\usepackage{ifthen}
+
+\usepackage{beamerthemeSME-CCPPD}
+%\usepackage{beamercolorthemeSME-CCPPD}
+%\usepackage{beamerinnerthemeSME-CCPPD}
+
+% \ifthenelse{\equal{\printmode}{handout}}%
+% {%
+% 	\usepackage{pgfpages}
+% 	\pgfpagesuselayout{1 on 1}[a4paper,landscape,border shrink=10mm]
+% }{}
+
+\input{\datadir/lecturenumber}
+
+\usepackage{colortbl}
+\usepackage[italian]{babel}
+\usepackage{pgf}
+\usepackage{xspace}
+
+\usepackage{multimedia}
+\usepackage{xmpmulti}
+\usepackage{hyperref}
+\usepackage[nofancy]{svninfo}
+\usepackage{gensymb}
+\usepackage{hhline}
+
+
+\newcommand{\cpyear}{2008, 2009}
+\newcommand{\cpholder}{Nicola Bernardini}
+\newcommand{\cpholderemail}{nicb@sme-ccppd.org}
+
+% Use some nice templates
+
+%\beamertemplateshadingbackground{red!10}{structure!10}
+\beamertemplatetransparentcovereddynamic
+\beamertemplateballitem
+\beamertemplatenumberedballsectiontoc
+
+% My colors
+\definecolor{notdone}{gray}{0.35}
+
+%\usecolortheme[named=MyColor]{structure}
+%\usecolortheme[named=MyColor]{structure}
+\beamertemplateshadingbackground{white!10}{white!10}
+
+\input{macros}
+
+\title[Storia della Musica III \lectnum]
+{%
+  Storia della Musica III \lectnum\\[-0.25\baselineskip]
+  {\small (Tecniche Compositive Moderne e Contemporanee)}\\
+	{\tiny (\rcstag)}
+}
+
+\author{%
+	Nicola Bernardini\\
+    \href{mailto:\cpholderemail}{\cpholderemail}
+}
+\institute[SME-CCPPD]%
+{%
+	\href{http://www.conservatoriopollini.it}
+		 {Conservatorio di Musica ``C.Pollini'' -- Padova}\\
+	\hhref{http://www.tecnosuono.org}
+}
+\date[Padova \AnnoAccademico]{Conservatorio di Padova - A.A. \AnnoAccademico}
+
+\begin{document}
+\svnInfo $Id: slides.tex 8 2014-02-04 21:01:21Z nicb $
+\newcounter{ms}
+\newcounter{lectno}
+  
+%%%% START %%%%
+
+\begin{frame}
+	\titlepage
+\end{frame}
+  
+\refstepcounter{lectno}
+\lecture{(\arabic{lectno}) Tecniche della Musica Contemporanea}{01}
+\part{Lezione \arabic{lectno}}
+\section{Introduzione}
+\subsection[Contesto]{Contesto Storico}
+\slideinput{historical_contexts}
+\slideinput{time_lines}
+\section{Musica}
+\subsection[Armonia]{Evoluzione dell'Armonia}
+\slideinput{caratteristiche-armonia}
+\subsection[Sostituzioni]{Sostituzioni Funzionali}
+\slideinput{sostituzioni_funzionali}
+\subsection[Cromatismo]{Armonia Cromatica}
+\slideinput{armonia_cromatica}
+\subsection[Toni Vicini]{Sequenze per Toni Vicini}
+\slideinput{toni_vicini}
+\subsection[Seq. Reali]{Sequenze Reali}
+\slideinput{sequenze_reali}
+\subsection[Mov. Paralleli]{Movimenti Paralleli}
+\slideinput{movimenti_paralleli}
+\subsection[Comp. Accordi]{Composizione degli Accordi}
+\slideinput{composizione_accordi}
+
+\refstepcounter{lectno}
+\lecture{(\arabic{lectno}) Tecniche della Musica Contemporanea}{02}
+\part{Lezione \arabic{lectno}}
+\section[Melodia]{Evoluzione della scrittura orizzontale}
+\slideinput{caratteristiche-melodia}
+\subsection[Modi Diat.]{Modalit\`a Diatonica}
+\slideinput{recupero-modale}
+\subsection[Scale non-diat.]{Scale non diatoniche}
+\slideinput{non-diatonic_scales}
+\subsection[Pentatoniche]{Scale Pentatoniche}
+\slideinput{pentatonic-scales}
+\subsection[Esatonali]{Scale Esatonali}
+\slideinput{whole_tone-scales}
+\subsection[Ottatoniche]{Scale Ottatoniche}
+\slideinput{heptatonic-scales}
+\subsection[Chromatiche]{Scale Cromatiche}
+\slideinput{chromatic-scales}
+\subsection[Microtonali]{Scale Microtonali}
+\slideinput{microtonal-scales}
+\subsection[Transpos. Lim.]{Modi a trasposizioni limitate}
+\slideinput{limited-transpo-modes}
+%
+\section[Ritmo]{Sviluppi ritmico--metrici}
+\slideinput{sviluppi_ritmico-metrici}
+\subsection[Tradizione]{Suddivisioni tradizionali}
+\slideinput{suddivisioni_tradizionali}
+\subsection[Percezione]{Ritmo scritto vs. ritmo percepito}
+\slideinput{ritmo_scritto_vs_percepito}
+\subsection[Tecniche]{Tecniche contemporanee}
+\slideinput{tecniche_metriche_contemporanee}
+\slideinput{tecniche_ritmiche_contemporanee}
+\subsection[Politempo]{Ametricit\`a e politempo}
+\slideinput{ametricita_politempo}
+
+\refstepcounter{lectno}
+\lecture{(\arabic{lectno}) Tecniche della Musica Contemporanea}{03}
+\part{Lezione \arabic{lectno}}
+\section[Forma]{Evoluzione della forma}
+\slideinput{caratteristiche-forma}
+\subsection[Ternarie]{Forme ternarie}
+\slideinput{forme_ternarie}
+\subsection[Arco]{Forme rond\`o e forme ad arco}
+\slideinput{forme_rondo_arco}
+\subsection[Sonata]{Forme sonata}
+\slideinput{forma_sonata}
+\subsection{Variazioni}
+\slideinput{variazioni}
+\subsection{Canoni e fughe}
+\slideinput{canoni_fughe}
+\subsection[Geometria]{Forme derivate da suggestioni geometriche}
+\slideinput{suggestioni_geometriche}
+\subsection[Aperte]{Forme aperte}
+\slideinput{forme_aperte}
+\subsection[Non--narrativit\`a]{Approcci non--narrativi}
+\slideinput{approcci_non_narrativi}
+\section{Atonalit\`a}
+\slideinput{atonalita}
+\subsection{Esempio}
+\slideinput{atonalita_esempio}
+\section{Dodecafonia}
+\slideinput{dodecafonia}
+\subsection{Esempi}
+\slideinput{dodecafonia-esempio-01}
+\slideinput{dodecafonia-esempio-02}
+
+\refstepcounter{lectno}
+\lecture{(\arabic{lectno}) Tecniche della Musica Contemporanea}{04}
+\part{Lezione \arabic{lectno}}
+\section[Secondo Dopoguerra]{Tecniche compositive del secondo dopoguerra}
+\subsection{Serialismo Integrale}
+\slideinput{secondo_dopoguerra-serialismo_integrale}
+\slideinput{serialismo_integrale-esempio_01}
+\slideinput{serialismo_integrale-esempio_02}
+\subsection{Alea}
+\slideinput{secondo_dopoguerra-alea}
+\slideinput{alea-principio_estetico}
+\slideinput{alea-esempio_01}
+\subsection{Indeterminazione}
+\slideinput{indeterminazione}
+\slideinput{indeterminazione-esempio_01}
+\subsection{Statistica}
+\slideinput{processi_probabilistici}
+\slideinput{processi_probabilistici-esempio_01}
+
+\refstepcounter{lectno}
+\lecture{(\arabic{lectno}) Tecniche della Musica Contemporanea}{05}
+\part{Lezione \arabic{lectno}}
+\section[Dopo il serialismo]{Superamento del Serialismo Integrale}
+\slideinput{superamento_serialita_01}
+\slideinput{limiti_serialismo_integrale}
+\slideinput{superamento_serialismo_integrale}
+\subsection[Nuova Espressivit\`a]{Recupero di Elementi Espressivi}
+\slideinput{recupero_elementi_espressivi}
+\subsection[Nuovo Tematismo]{Nuove Forme Tematiche}
+\slideinput{nuove_forme_tematiche}
+\subsection[Elementi Connotativi]{Utilizzazione di Elementi Connotativi}
+\slideinput{elementi_connotativi}
+\subsection[Il Suono]{Comporre nel/col Suono}
+\slideinput{comporre_col_suono}
+\subsection[Conclusioni]{Riflessioni Conclusive}
+\slideinput{riflessioni_conclusive}
+
+\refstepcounter{lectno}
+\lecture{(\arabic{lectno}) Tecniche della Musica Contemporanea}{06}
+\part{Lezione \arabic{lectno}}
+\section[Musica Elettronica]{Gli Studi di Musica Elettronica}
+\slideinput{musica_elettronica-studi}
+\subsection{GRM}
+\slideinput{GRM}
+\begin{frame}
+    \frametitle{GRM -- Esempio Sonoro}
+
+    \begin{itemize}
+
+        \item Pierre Scheffer, \emph{Etude aux Chemins de Fer} (1948)
+
+    \end{itemize}
+
+\end{frame}
+\subsection{WDR}
+\slideinput{WDR}
+\begin{frame}
+    \frametitle{WDR -- Esempio Sonoro}
+
+    \begin{itemize}
+
+        \item Karlheinz Stockhausen, \emph{Komposition n.2 -- Studie n.1} (1952)
+
+    \end{itemize}
+
+\end{frame}
+\subsection{RAI}
+\slideinput{RAI}
+\begin{frame}
+    \frametitle{RAI -- Esempio Sonoro}
+
+    \begin{itemize}
+
+        \item RAI: Luciano Berio, \emph{THEMA -- Omaggio a Joyce} (1958)
+
+    \end{itemize}
+
+\end{frame}
+
+\end{document}

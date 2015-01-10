@@ -1,0 +1,163 @@
+#
+# $Id$
+#
+scale=2.54 # measures in cm
+maxpswid=35
+maxpsht=8
+
+#
+# tick(when)
+#
+tick_when = 0
+tick_notch_above=0.3
+tick_notch_below=0.15
+tick_notch=tick_notch_above+tick_notch_below
+tl_start=0
+tl_end=0
+tl_dur=0
+tl_width=maxpswid
+tick_kern_below=1
+define tick {
+    tick_when := (($1 - tl_start)/tl_dur)*tl_width
+    tick_kern_below := $2*1.2
+
+    Tick_$1: line from TimeLine.w + (tick_when, -tick_notch_below) to TimeLine.w + (tick_when, tick_notch_above)
+    Date_$1: sprintf("%.0f", $1) with .n at Tick_$1.s - (0, tick_notch*tick_kern_below)
+    line from Tick_$1.s to Date_$1.n + (0,tick_notch*tick_kern_below)
+}
+#
+# layer(name<string>,color<string>)
+#
+layer_height=5.5
+layer_bot=0
+layer_pad=0.5
+layer_idx=1
+define layer_ {
+    layer_bot := ($1-1)*layer_height
+
+    Layer_$1: box invis wid tl_width ht layer_height with .sw at TimeLine.nw + (0, layer_bot)
+    line dashed from Layer_$1.nw to Layer_$1.ne outline $3
+    $2 at Layer_$1.w - (layer_pad,0) rjust outline $3
+}
+define layer {
+    layer_(layer_idx,$1,$2)
+    layer_idx = layer_idx + 1
+}
+#
+# time_line(start,end)
+#
+define time_line {
+    tl_start = $1
+    tl_end   = $2
+    tl_dur   = tl_end - tl_start
+
+    TimeLine: line from 0,0 to tl_width,0
+    #
+    # notches
+    #
+    tick($1,1)
+    tick($2,1)
+    layer("\s[+4]Compositori\s0","dodgerblue4")
+    layer("\s[+4]Musica\s0","dodgerblue3")
+    layer("\s[+4]Politica\s0","dodgerblue2")
+    layer("\s[+4]Scienza           " "Tecnologia\s0","dodgerblue1")
+    layer("\s[+4]Cultura\s0","dodgerblue")
+}
+
+#
+# tag(time,what<string>,layer,color,scaler,tick_off_below,tag_inner_offset)
+#
+tag_when=0
+tag_layer_height=0
+tag_width_base=3.5
+tag_height_base=2
+tag_width=0
+tag_height=0
+tag_inner_offset=0
+tag_padding=0.05
+define tag_ {
+    tag_layer_height := ($4-1)*layer_height
+    tag_width := tag_width_base * $6
+    tag_height := tag_height_base * $6 * 0.75
+    tag_inner_offset := (($8-1)*tag_height)+tag_padding
+
+
+    tick($1,$7)
+    
+    Tag_$2: box wid tag_width ht tag_height with .s at Tick_$1.n + (0, tag_layer_height+tag_inner_offset) $3 outline $5 rad 0.25
+    line dashed from Tag_$2.s to Tick_$1.n outline "slategray"
+}
+tag_idx=1
+define tag {
+    tag_($1,tag_idx,$2,$3,$4,$5,$6,$7)
+    tag_idx = tag_idx + 1
+}
+#
+# music_tag, politic_tag, tech_tag, cult_tag
+# xxx_tag(time,what<string>,scaler,tick_off_scaler,tag_inner_offset)
+#
+define music_tag {
+    tag($1,$2,2,"tlred",$3,$4,$5)
+}
+define politic_tag {
+    tag($1,$2,3,"tlred",$3,$4,$5)
+}
+define tech_tag {
+    tag($1,$2,4,"tlred",$3,$4,$5)
+}
+define cult_tag {
+    tag($1,$2,5,"tlred",$3,$4,$5)
+}
+#
+# composer(name,birth,death,level,idx)
+#
+c_offset=layer_height*0
+c_sub_thickness=layer_height/7
+c_padding=c_sub_thickness*0.05
+c_height=c_sub_thickness-(2*c_padding)
+c_level=0
+c_width=0
+c_start=0
+c_birth=0
+c_birth_flag=0
+c_death=0
+c_death_flag=0
+c_extra=0.8
+define composer_ {
+
+    if ($2 < tl_start) then {
+        c_birth := tl_start
+        c_birth_flag := 1
+    } else {
+        c_birth := $2
+    }
+
+    if ($3 > tl_end) then {
+        c_death := tl_end
+        c_death_flag := 1
+    } else {
+        c_death := $3
+    }
+    
+    c_level := c_offset + (($4-1)*c_sub_thickness) + (c_sub_thickness/2) + c_padding
+    c_width  := ((c_death-c_birth)/tl_dur)*tl_width
+    c_start  := ((c_birth-tl_start)/tl_dur)*tl_width
+
+    Composer_$5: box wid c_width ht c_height with .w at TimeLine.w + (c_start, c_level) shaded "dodgerblue4" outline "white"
+    $1 with .c at Composer_$5.c - (0,0.1) outline "white"
+    if (c_birth_flag == 1) then {
+        line dashed from Composer_$5.nw - (c_extra, c_padding) to Composer_$5.nw - (0, c_padding)
+        line dashed from Composer_$5.sw - (c_extra, -c_padding) to Composer_$5.sw - (0, -c_padding)
+    }
+    if (c_death_flag == 1) then {
+        line dashed from Composer_$5.ne - (0, c_padding) to Composer_$5.ne + (c_extra, -c_padding)
+        line dashed from Composer_$5.se + (0, c_padding) to Composer_$5.se + (c_extra, c_padding)
+    }
+    c_birth_flag := 0
+    c_death_flag := 0
+}
+c_idx=0
+define composer {
+    composer_($1,$2,$3,$4,c_idx)
+    c_idx = c_idx + 1
+}

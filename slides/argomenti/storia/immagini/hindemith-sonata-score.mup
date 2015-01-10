@@ -1,0 +1,36 @@
+// vi:set nowrap:
+//
+// $Id: hindemith-sonata-score.mup 77 2009-06-29 20:47:13Z nicb $
+//
+// Hindemith, sonata for trombone and piano (1941) mm.1-5
+//
+header
+score
+time=3/2
+packfact=0.85
+pagewidth=7
+pageheight=2
+staffs=1
+stafflines=5
+clef=bass
+beamstyle=2,2,2
+music
+1: 2.f; 4c; 2g;
+bar
+1: 4c; 2b&; 4c; 2d&+;
+bar
+1: 4c&+; 4b&; 4e&; 8d&; 8a&; 4g&; 4f;
+bar
+1: 2e; 2a; 2e;
+bar
+1: 1.a-;
+bar
+//
+// $Log$
+// Revision 1.1  1999/11/11 16:33:10  nicb
+// [changes by nicb@axnet.it]
+//
+// - added 2nd lesson
+// - added TODO file
+// - separated orc and scos with a single orc file and multiple scos
+//
