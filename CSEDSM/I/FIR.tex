@@ -4,96 +4,95 @@
 
 \section{Un filtro FIR semplice\label{sec:simple fir}}
 
-\subsection{Dominio continuo di tempo\label{sec:continuous time}}
+\subsection{Dominio continuo del tempo\label{sec:continuous time}}
 
 Nei filtri FIR (\emph{feed-forward}) l'output \`e la somma dell'input e una versione riscalata e ritardata
-    dell'input:
+		dell'input:
 
-    \begin{equation}\label{eqn:fir semplice}
-            y_t = x_t + a_1 x_{t-\tau}
-      \end{equation}
+		\begin{equation}\label{eqn:fir semplice}
+						y_t = x_t + a_1 x_{t-\tau}
+			\end{equation}
 
-    (aggiungere grafico)
+		(aggiungere grafico)
 
-  Poniamo che $x_t$ sia un segnale sinusoidale complesso:
+	Poniamo che $x_t$ sia un segnale sinusoidale complesso:
 
-     \begin{equation}
-      x_t = e^{i\omega t}\nonumber
-     \end{equation}
+		 \begin{equation}
+	    x_t = e^{i\omega t}\nonumber
+		 \end{equation}
 
-     \begin{equation}
-      y_t = e^{i \omega t} + a_1 e^{i \omega (t - \tau)}
-     \end{equation}
+		 \begin{equation}
+			y_t = e^{i \omega t} + a_1 e^{i \omega (t - \tau)}
+		 \end{equation}
 
-    (fare schemino sul cerchio unitario)
+		(fare schemino sul cerchio unitario)
 
-     \begin{equation}
-      y_t = e^{i \omega t} + a_1 e^{i \omega t} e^{-i \omega \tau} = e^{i\omega t} \left [ 1 + a_1 e^{-i \omega \tau} \right ]
-     \end{equation}
+		 \begin{equation}
+		  y_t = e^{i \omega t} + a_1 e^{i \omega t} e^{-i \omega \tau} = e^{i\omega t} \left [ 1 + a_1 e^{-i \omega \tau} \right ]
+		 \end{equation}
 
-  Quindi l'uscita \`e sempre un fasore di frequenza $\omega$ moltiplicato per
-    un'ampiezza che \`e funzione di $\omega$ (ma indipendente dal tempo!)
+	Quindi l'uscita \`e sempre un fasore di frequenza $\omega$ moltiplicato per
+		un'ampiezza che \`e funzione di $\omega$ (ma indipendente dal tempo!).
 
-  La funzione del filtro \`e dunque $\left [ 1 + a_1 e^{-i \omega \tau} \right ]$ e la chiameremo $H(\omega)$.
+	La funzione del filtro \`e dunque $\left [ 1 + a_1 e^{-i \omega \tau} \right ]$ e la chiameremo $H(\omega)$
 
-  Per capire la risposta in frequenza e in fase dobbiamo capire che $H(\omega)$ \`e
-    in realt\`a la magnitudine (valore assoluto di $H(\omega)$ moltiplicata per una
-    funzione della fase:
+	Per capire la risposta in frequenza e in fase dobbiamo capire che $H(\omega)$ \`e
+		in realt\`a la magnitudine (valore assoluto di $H(\omega)$ moltiplicata per una
+		funzione della fase:
 
-     \begin{equation}
-      H(\omega) = |H(\omega)| e^{i \Theta(\omega)}
-     \end{equation}
+		 \begin{equation}
+		  H(\omega) = |H(\omega)| e^{i \Theta(\omega)}
+		 \end{equation}
 
-   dove $|H(\omega)| = |1 + a_1 e^{-i\omega \tau}|$; siccome per il teorema di Pitagora il
-   modulo \`e il quadrato della parte reale + il quadrato della parte
-   immaginaria sotto radice,
-   e ricordando l'uguaglianza di Eulero $e^{i \omega t} = cos(\omega t) + i sen(\omega t)$,
+	 dove $|H(\omega)| = |1 + a_1 e^{-i\omega \tau}|$; siccome per il teorema di Pitagora il
+	 modulo \`e il quadrato della parte reale + il quadrato della parte
+	 immaginaria sotto radice,
 
-     \begin{equation}
-    Re(H(\omega)) = 1 + a_1 cos(\omega \tau)
-     \end{equation}
-     \begin{equation}
-    Im(H(\omega)) = - a_1 sin(\omega \tau)
-     \end{equation}
+		 \begin{equation}
+	  Re(H(\omega)) = 1 + a_1 cos(\omega \tau)
+		 \end{equation}
+		 \begin{equation}
+		Im(H(\omega)) = - a_1 sin(\omega \tau)
+		 \end{equation}
 
-     \begin{equation}
-    Re^2 = 1 + 2 a_1 cos(\omega \tau) + a_1^2 cos^2(\omega \tau)
-     \end{equation}
-     \begin{equation}
-    Im^2 = a_1^2 sin^2(\omega \tau)
-     \end{equation}
+		 \begin{equation}
+	  Re^2 = 1 + 2 a_1 cos(\omega \tau) + a_1^2 cos^2(\omega \tau)
+		 \end{equation}
+		 \begin{equation}
+		Im^2 = a_1^2 sin^2(\omega \tau)
+		 \end{equation}
 
-    quindi
-    
-     \begin{equation}
-    Re^2 + Im^2 = 1 + 2 a_1 cos(\omega \tau) + a_1^2 [ cos^2(\omega \tau) + sin^2(\omega \tau) ]
-     \end{equation}
+		quindi
+		
+		 \begin{equation}
+		Re^2 + Im^2 = 1 + 2 a_1 cos(\omega \tau) + a^2 [ cos^2(\omega \tau) + sin^2(\omega \tau) ]
+		 \end{equation}
 
-     Dato che
+		 Dato che
 
-     \begin{equation}
-        cos^2(\alpha) + sin^2(\alpha) = 1
-     \end{equation}
+		 \begin{equation}
+				cos^2(\alpha) + sin^2(\alpha) = 1
+		 \end{equation}
 
-     per $\alpha$ qualsiasi, la magnitudine risulter\`a quindi
+		 per $\alpha$ qualsiasi,
 
-     \begin{equation}
-       \sqrt{1 + 2 a_1 cos(\omega \tau) + a_1^2 [ cos^2(\omega \tau) + sin^2(\omega \tau) ]} = \sqrt{1 + 2 a_1 cos(\omega \tau) + a_1^2}
-     \end{equation}
-     \begin{figure}[htb]
-       \begin{center}
-          \includegraphics[width=0.8\textwidth]{\plotdir/fir2}
-          \caption{Filtro FIR con $\tau = 1/fc$\label{fig:fir con tau 1}}
-       \end{center}
-     \end{figure}
-     \begin{figure}[htb]
-       \begin{center}
-          \includegraphics[width=0.8\textwidth]{\plotdir/fir3}
-          \caption{Filtro FIR con $\tau = 23/fc$\label{fig:fir con tau 23}}
-       \end{center}
-     \end{figure}
-     Le Figg.\vref{fig:fir con tau 1} e \vref{fig:fir con tau 23} mostrano la
-     risposta in frequenza rispettivamente per $\tau = 1/fc$ e per $\tau = 23/fc$.
+		 \begin{equation}
+				1 + 2 a_1 cos(\omega \tau) + a^2 [ cos^2(\omega \tau) + sin^2(\omega \tau) ] = 1 + 2 a_1 cos(\omega \tau) + a^2
+		 \end{equation}
+		 \begin{figure}[htb]
+			 \begin{center}
+					\includegraphics[width=0.8\textwidth]{\plotdir/fir2}
+					\caption{Filtro FIR con $\tau = 1/fc$\label{fig:fir con tau 1}}
+			 \end{center}
+		 \end{figure}
+		 \begin{figure}[htb]
+			 \begin{center}
+					\includegraphics[width=0.8\textwidth]{\plotdir/fir3}
+					\caption{Filtro FIR con $\tau = 23/fc$\label{fig:fir con tau 23}}
+			 \end{center}
+		 \end{figure}
+		 Le Figg.\vref{fig:fir con tau 1} e \vref{fig:fir con tau 23} mostrano la
+		 risposta in frequenza rispettivamente per $\tau = 1/fc$ e per $\tau = 23/fc$.
 
 \paragraph{Esercizi}
 
