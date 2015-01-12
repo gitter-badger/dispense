@@ -1,0 +1,35 @@
+// vi:set nowrap:
+//
+// $Id: bartok-sipc-score.mup 77 2009-06-29 20:47:13Z nicb $
+//
+// whole-tone scales
+//
+header
+score
+time=4/4n
+packfact=0.7
+pagewidth=7
+pageheight=2
+staffs=1
+stafflines=5
+beamstyle=4,4,4,4
+music
+1: 8r; 8a+; 4g#+; 8f#+; 4e+ slur; 8d#+;
+bar
+1: 8c#+; 8b; 4c+; 8d#+; 4e+ slur; 8f#+;
+bar
+1: 8g#+; 8a+; 4b+; 8a+; 4g+; 8f#+;
+bar
+1: 8e+; 8d#+; 4c#+; 8b; 4a slur; 8b;
+bar
+1: 4a; 2.s;
+invisbar
+//
+// $Log$
+// Revision 1.1  1999/11/11 16:33:09  nicb
+// [changes by nicb@axnet.it]
+//
+// - added 2nd lesson
+// - added TODO file
+// - separated orc and scos with a single orc file and multiple scos
+//

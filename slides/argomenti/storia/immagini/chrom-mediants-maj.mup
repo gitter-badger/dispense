@@ -1,0 +1,33 @@
+// vi:set nowrap:
+//
+// $Id: chrom-mediants-maj.mup 76 2009-06-26 22:44:04Z nicb $
+//
+// chromatic mediants examples - major chords
+//
+header
+score
+time=4/2n
+pagewidth=7
+pageheight=2
+staffs=1
+stafflines=5
+music
+1: 1gbd+; 1bd#+f#+;
+lyrics 1: 1; 1; "Sol Si";
+bar
+1: 1gbd+; 1e&gb&;
+lyrics 1: 1; 1; "Sol Mi\s(-4)\(flat)\s(+4)";
+bar
+1: 1gbd+; 1b&d+f+;
+lyrics 1: 1; 1; "Sol Si\s(-4)\(flat)\s(+4)";
+bar
+1: 1gbd+; 1eg#b;
+lyrics 1: 1; 1; "Sol Mi";
+bar
+//
+// $Log: chrom-mediants-maj.mup,v $
+// Revision 1.1  1999/11/03 07:17:13  nicb
+// [changes by nicb@axnet.it]
+//
+// - Initial Revision of lesson 1
+//

@@ -1,0 +1,38 @@
+%
+% $Id: recupero-modale.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\svnInfo $Id: recupero-modale.tex 8 2014-02-04 21:01:21Z nicb $
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Recupero modale delle scale diatoniche (\arabic{ms})}
+
+    \begin{itemize}
+
+        \item Recupero modale:
+
+            \begin{center}
+                \begin{figure}
+                    \pgfimage[width=0.9\textwidth]{\imagedir/diatonic-modes}
+                \end{figure}
+            \end{center}
+            \listento{run: timidity \imagedir/diatonic-modes.midi}{}
+
+    \end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Recupero modale delle scale diatoniche (\arabic{ms})}
+
+       \begin{center}
+           \begin{figure}
+               \pgfimage[width=0.9\textwidth]{\imagedir/bartok-sipc-score}
+               \caption{\listento{run: timidity \imagedir/bartok-sipc-score.midi}%
+                        {Bartok, \emph{Musica per Archi, Percussioni e Celesta}, IV, batt. 5-9 (solo melodia)}}
+           \end{figure}
+       \end{center}
+
+\end{frame}

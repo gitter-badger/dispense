@@ -1,0 +1,22 @@
+// vi:set nowrap:
+//
+// $Id: schoenberg-op11-set5-notes.mup 79 2009-07-10 10:51:47Z nicb $
+//
+// Schoenberg op.11 n.2 set n.5
+//
+header
+score
+time=4/1n
+pagewidth=4.5
+pageheight=2
+staffs=1
+stafflines=5
+clef=treble
+music
+1: 1g-; 1e&; 1g#; 1c#+;
+dblbar
+//
+// $Log$
+// Revision 1.1  1999/11/30 17:26:41  nicb
+// Added lesson 5
+//
