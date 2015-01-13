@@ -1,0 +1,136 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\svnInfo $Id$
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Elementi Hardware (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item L'orologio sincronizza tutte le operazioni
+			  e le comunicazioni che avvengono sulla
+			  scheda madre
+
+		\item le CPU pi\`u recenti usano un multiplo del clock della scheda madre per
+			  le istruzioni interne (dato che, in generale,
+			  un'istruzione della CPU ha bisogno di pi\`u cicli per essere
+			  ultimata)
+
+		\item in linea generale, la CPU accede a tutte le periferiche
+		      attraverso delle zone di memoria specializzate
+			  dette \emph{registri}, le quali si trovano ad indirizzi ben definiti
+			  e separati dalla memoria convenzionale
+
+	\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Elementi Hardware (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item il \emph{bus} \`e una collezione di linee elettriche
+              in numero sufficiente per ospitare:
+
+			  \begin{itemize}[<+- | alert@+->]
+
+				\item l'indirizzamento di memoria (8, 16, 32 o 64 linee)
+
+				\item i dati in lettura/scrittura dalla memoria
+
+				\item segnali (\emph{interrupts})
+
+				\item ecc.
+
+			  \end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\setcounter{ms}{1}
+\begin{frame}
+    \frametitle{I Dischi Rigidi (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item I dischi rigidi contengono varie parti funzionalmente diverse:
+
+			\vspace{6mm}
+			\begin{itemize}[<+- | alert@+->]
+
+				\item la \emph{file allocation table} (\emph{FAT})
+                      che definisce
+
+				\item la mappatura tra nomi simbolici dei files
+%				      e gruppo di indirizzi ai quali questi files
+					  fanno riferimento (\emph{clusters})
+
+				\item la struttura gerarchica dei nomi simbolici
+                      (\emph{directories}, \emph{files}, ecc.)
+
+				\item eventuali altre caratteristiche
+                      (\emph{links}, ecc.)
+
+			\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+  \frametitle{I Dischi Rigidi (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item I dischi rigidi contengono varie parti funzionalmente diverse:
+
+			\vspace{6mm}
+			\begin{itemize}[<+- | alert@+->]
+
+				\item la zona dati, che a sua volta \`e suddivisa in
+
+					\begin{itemize}
+
+						\item settori
+
+						\item blocchi
+
+					\end{itemize}
+
+			\end{itemize}
+
+		\item Un file occupa sempre una dimensione multipla
+		      della dimensione dei blocchi.
+
+	\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}{{I Dischi Rigidi (\arabic{ms})}}
+
+	\begin{center}
+      \pgfdeclareimage[height=0.75\textheight]{disk}{\imagedir/disk-logical-structure}
+      \pgfuseimage{disk}
+	\end{center}
+	
+\end{frame}

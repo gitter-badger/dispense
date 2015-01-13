@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $Id: csound_player,v 0.0 2004/12/14 22:22:54 nicb Exp $
+#
+DIR=$(dirname $1)
+FILE=$(basename $1)
+
+cd $DIR
+csound -do devaudio $FILE
+
+exit 0

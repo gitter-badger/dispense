@@ -1,0 +1,138 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: rappresentazione-digitale-0.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\svnInfo $Id: rappresentazione-digitale-0.tex 8 2014-02-04 21:01:21Z nicb $
+
+\setcounter{ms}{1}
+\begin{frame}
+  \frametitle{Rappresentabilit\`a (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+    \item[~]{~}
+    \item{Quante cose si possono rappresentare\dots}
+
+    \item{(\dots o descrivere\dots)}
+
+    \item{\dots con un interruttore?}
+
+    \item{Poche.}
+
+    \item{Essenzialmente: due}
+
+    \item{Due \emph{stati}}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+  \frametitle{Rappresentabilit\`a (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Se aggiungiamo un secondo interruttore al primo quanti stati
+        possiamo rappresentare?
+
+    \item Quattro:
+
+     \item[~] \begin{tabular}{c | c}
+             {\bfseries Int.1} & {\bfseries Int.2}\\
+             spento & spento\\
+             spento & acceso \\
+             acceso & spento \\
+             acceso & acceso \\
+         \end{tabular}
+
+    \item se ne aggiungiamo un terzo?\ \uncover<+->{8}
+
+    \item e un altro ancora?\ \uncover<+->{16}
+
+    \item{ecc.}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+
+  \frametitle{Rappresentabilit\`a (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+    \item quindi ad una progressione aritmetica (l'aggiunta di un interruttore
+        alla volta ($+ 1$))\dots
+
+    \item{\dots corrisponde una progressione geometrica ($2^n$) degli stati
+        che si possono rappresentare}
+
+    \item{Gi\`a duecento e passa anni fa matematici e filosofi avevano capito che
+        questa demoltiplicazione sarebbe tornata molto utile\dots}
+
+    \item{\dots e si sono messi a creare \emph{teorie sulla risolvibilit\`a dei
+        problemi}}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+
+  \frametitle{Rappresentabilit\`a (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+    
+      \item{\emph{Essenzialmente}, queste teorie ruotavano (e ruotano) intorno alla domanda:}
+
+      \item{``Se io ho una quantit\`a sufficientemente grande di interruttori,
+          quanti e quali problemi posso risolvere?''}
+
+      \item{Le ultime versioni di queste teorie (nate tra gli anni trenta e la
+          seconda guerra mondiale) sono arrivate alla conclusione che\dots}
+
+      \item{\dots con una quantit\`a sufficientemente grande di
+          interruttori\dots}
+
+      \item{\dots sono risolvibili tutti i problemi \emph{formalizzabili}}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+
+  \frametitle{Rappresentabilit\`a (\arabic{ms})}
+
+  \vspace{-2ex}
+	\begin{itemize}[<+- | alert@+->]
+      \item[~]{~}
+      \item{solo che\dots}
+
+      \item{\dots certi problemi richiedono una quantit\`a \emph{infinita} di
+          interruttori} % turing-complete
+
+      \item{I \emph{computers} nascono da queste teorie.}
+
+      \item{Ahim\'e, alcuni problemi musicali fanno parte -- a quanto
+          sembra -- di quest'ultima categoria di problemi}
+
+	\end{itemize}
+  
+\end{frame}

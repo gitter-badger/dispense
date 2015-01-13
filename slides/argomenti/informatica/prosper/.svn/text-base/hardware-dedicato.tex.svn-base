@@ -1,0 +1,214 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\setcounter{ms}{1}
+\begin{slide}{Hardware dedicato}
+{
+
+	\begin{itemize}
+	\setlength{\itemsep}{8mm}
+
+		\item Data la potenza di calcolo necessaria
+              alle applicazioni musicali,
+              molte sono state le soluzioni ``dedicate'' ad esse.
+
+		\item Queste soluzioni si possono raggruppare,
+              dalle pi\`u lontane alle pi\`u recenti, in:
+
+			  \begin{itemize}
+			  \setlength{\itemsep}{4mm}
+
+			  	\item architetture dedicate host/DSP
+
+				\item sintetizzatori \emph{stand-alone}
+
+				\item stazioni di lavoro musicali
+
+				\item elaboratori personali generici
+				      con estensioni multimediali
+
+			  \end{itemize}
+
+	\end{itemize}
+}
+\end{slide}
+
+\setcounter{ms}{1}
+\begin{slide}{Tempo reale e tempo differito (\arabic{ms})}
+{
+
+	\begin{itemize}
+	\setlength{\itemsep}{2mm}
+
+		\item Al di l\`a delle diverse tipologie,
+		      un'ampia distinzione tra i sistemi dedicati alla musica
+              si pu\`o tracciare tra:
+
+			  \begin{itemize}
+
+				\item sistemi operanti in tempo reale
+
+				\item sistemi operanti in tempo differito
+
+			  \end{itemize}
+
+		\item \emph{Tempo reale}, in questo caso, significa che
+			  il periodo necessario al calcolo di uno o pi\`u campioni
+			  (un \emph{frame}) \`e \emph{minore} del periodo di campionamento,
+			  ossia:
+
+			  \begin{equation}
+				\frac{Tempo~di~calcolo}{T_c} < 1 \nonumber
+			  \end{equation}
+
+              dove $T_c$ \`e il periodo di campionamento
+
+	\end{itemize}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Tempo reale e tempo differito (\arabic{ms})}
+{
+
+	\begin{itemize}
+
+		\item I pro e i contro di tempo reale e tempo differito sono:
+		
+			\vspace{2mm}
+			{\scriptsize
+			\begin{tabular}{| p{0.2\textwidth} | p{0.3\textwidth} | p{0.3\textwidth} |}
+				\hline
+					& {\centering\bfseries Pro} & {\centering\bfseries Contro}\\
+				\hline
+				Tempo Reale: & rispetta il rapporto causale
+							   tra gesto e suono &
+							   numero limitato di operazioni\\
+							 & feedback immediato &
+                               dispendioso in termini di risorse di calcolo\\
+				\hline
+				Tempo Differito & numero illimitato di operazioni &
+								  rapporto causale non rispettato
+								  (suono senza gesto fisico)\\
+							 & realizzabile con risorse di
+							   calcolo generiche ed economiche &
+                               feedback non immediato\\
+				\hline
+			\end{tabular}
+			}
+
+	\end{itemize}
+}
+\end{slide}
+
+\setcounter{ms}{1}
+\begin{slide}{Strutture Host/DSP (\arabic{ms})}
+{
+		\begin{itemize}
+		\setlength{\itemsep}{12mm}
+
+			\item Alcuni strumenti in tempo reale sono
+                  computers specializzati nell'elaborazione numerica
+                  (denominati \emph{Digital Signal Processor}s
+                  o \emph{DSP}).
+
+		    \item Tali computers non possiedono sistema
+				  operativo proprio (o ne possiedono uno minimale)
+				  e sono generalmente controllati da un
+				  computer generico (denominato \emph{host}).
+
+		\end{itemize}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Strutture Host/DSP (\arabic{ms})}
+{
+	\begin{center}
+		\includegraphics[height=0.95\textheight]{\imagedir/host-dsp-structure}
+	\end{center}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Strutture Host/DSP}
+{
+
+	\begin{itemize}
+
+		\item In una struttura \emph{Host-DSP},
+			  il software DSP viene caricato volta per volta
+			  dall'\emph{host} nel \emph{DSP},
+			  il quale lo esegue ricorsivamente
+			  sino al caricamento seguente.
+
+	\end{itemize}
+
+	\begin{center}
+		\includegraphics[height=0.6\textheight]{\imagedir/host-dsp-schema}
+	\end{center}
+
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Strutture Host/DSP}
+{
+
+	\begin{itemize}
+
+		\item Le strutture hardware pi\`u diffuse sono
+              attualmente DSP \emph{stand-alone}
+              (=autonomi), che assumono generalmente
+              la forma di tastiere o expanders.
+
+		\item Strutture del genere sono simili a strutture
+              \emph{host-DSP} nelle quali
+              il software \`e stato pre-caricato
+              e memorizzato in memorie a sola lettura (\emph{ROM}).
+
+	\end{itemize}
+
+	\begin{center}
+		\includegraphics[height=0.45\textheight]{\imagedir/stand-alone}
+	\end{center}
+
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Strutture non-specializzate}
+{
+
+	\begin{itemize}
+
+		\item Viceversa, con l'incremento drastico della potenza
+		      delle CPU generiche, \`e stato possibile creare
+              degli strumenti musicali digitali
+              basandosi esclusivamente su elaboratori
+              generici (\emph{desktops}, \emph{laptops}, ecc.).
+
+		\item In questi strumenti, tutto i calcoli vengono eseguiti
+		      dalla CPU generica e comunicati ad una scheda di I/O audio:
+
+	\end{itemize}
+
+	\begin{center}
+		\includegraphics[height=0.4\textheight]{\imagedir/generic-schema}
+	\end{center}
+
+}
+\end{slide}

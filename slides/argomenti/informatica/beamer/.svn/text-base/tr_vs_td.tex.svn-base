@@ -1,0 +1,83 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\svnInfo $Id$
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Tempo reale e tempo differito (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Al di l\`a delle diverse tipologie,
+		      un'ampia distinzione tra i sistemi dedicati alla musica
+              si pu\`o tracciare tra:
+
+			  \begin{itemize}[<+- | alert@+->]
+
+				\item sistemi operanti in tempo reale
+
+				\item sistemi operanti in tempo differito
+
+			  \end{itemize}
+
+		\item \emph{Tempo reale}, in questo caso, significa che
+			  il periodo necessario al calcolo di uno o pi\`u campioni
+			  (un \emph{frame}) \`e \emph{minore} del periodo di campionamento,
+			  ossia:
+
+			  \begin{equation}
+				\frac{Tempo~di~calcolo}{T_c} < 1 \nonumber
+			  \end{equation}
+
+              dove $T_c$ \`e il periodo di campionamento
+
+	\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Tempo reale e tempo differito (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item I pro e i contro di tempo reale e tempo differito sono:
+		
+    \item[~] {\scriptsize
+			\begin{tabular}{| p{0.18\textwidth} | p{0.28\textwidth} | p{0.28\textwidth} |}
+				\hline
+					& {\centering\bfseries Pro} & {\centering\bfseries Contro}\\
+				\hline
+            Tempo Reale: & rispetta il rapporto causale
+							   tra gesto e suono &
+							   numero limitato di operazioni\\
+							 & feedback immediato &
+               dispendioso in termini di risorse di calcolo\\
+				\hline
+				Tempo Differito & numero illimitato di operazioni &
+								  rapporto causale non rispettato
+								  (suono senza gesto fisico)\\
+							 & realizzabile con risorse di
+							   calcolo generiche ed economiche &
+                 feedback non immediato\\
+        \hline
+       \end{tabular}}
+
+	\end{itemize}
+
+\end{frame}

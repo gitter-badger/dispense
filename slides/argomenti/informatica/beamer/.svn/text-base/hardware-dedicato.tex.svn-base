@@ -1,0 +1,73 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\svnInfo $Id$
+
+\setcounter{ms}{1}
+\begin{frame}
+    \frametitle{Hardware dedicato}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Data la potenza di calcolo necessaria
+              alle applicazioni musicali,
+              molte sono state le soluzioni ``dedicate'' ad esse.
+
+		\item Queste soluzioni si possono raggruppare,
+              dalle pi\`u lontane alle pi\`u recenti, in:
+
+			  \begin{itemize}[<+- | alert@+->]
+
+			  	\item architetture dedicate host/DSP
+
+				\item sintetizzatori \emph{stand-alone}
+
+				\item stazioni di lavoro musicali
+
+				\item elaboratori personali generici
+				      con estensioni multimediali
+
+			  \end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\input{\beamerslides/tr_vs_td}
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Strutture non-specializzate}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Viceversa, con l'incremento drastico della potenza
+	      delle CPU generiche, \`e stato possibile creare
+            degli strumenti musicali digitali
+              basandosi esclusivamente su elaboratori
+              generici (\emph{desktops}, \emph{laptops}, ecc.).
+
+		\item In questi strumenti, tutti i calcoli vengono eseguiti
+		      dalla CPU generica e comunicati ad una scheda di I/O audio:
+
+	\end{itemize}
+
+	\only<+->{\begin{center}
+    \pgfdeclareimage[height=0.4\textheight]{generic_schema}{\imagedir/generic-schema}
+    \pgfuseimage{generic_schema}
+  \end{center}}
+
+\end{frame}

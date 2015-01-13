@@ -1,0 +1,28 @@
+%
+% $Id%
+%
+\svnInfo $Id$
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{La Conversione Digitale--Analogico (\arabic{ms})}
+
+    \begin{itemize}[<+- | alert@+->]
+        \item Vari tipi di convertitori (\arabic{ms}):
+
+            \begin{itemize}[<+- | alert@+->]
+                \item{\emph{Pulse Width Modulation} (\emph{PWM}): due 
+                    tensioni vengono alternate con durate proporzionali al
+                    numero di bit, e poi filtrate da un filtro passa--basso}
+                \item{modulatori \emph{Delta--Sigma}: convertitori a pochi bit
+                    sovra--campionati che producono solo \emph{la differenza}
+                    tra un campione e quello precedente}
+                \item{rete di resistenze pesate: ciascun bit ha una resistenza
+                    particolare ed il risultato \`e la somma della rete}
+                \item \dots
+            \end{itemize}
+
+    \end{itemize}
+
+\end{frame}

@@ -1,0 +1,220 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: rappresentazione-digitale.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\svnInfo $Id: rappresentazione-digitale.tex 8 2014-02-04 21:01:21Z nicb $
+
+\setcounter{ms}{1}
+\begin{frame}
+    \frametitle{Rappresentazioni numeriche (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item I calcolatori sono un insieme molto elevato di transistors
+			bistabili (= che possono emettere solo due valori di tensione)
+
+		\item I calcolatori possono quindi essere assimilati ad
+			enormi collezioni di interruttori,
+			i quali possono trovarsi in due posizioni sole
+			(acceso o spento, oppure 0 o 1)
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Rappresentazioni numeriche (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item questi interruttori si chiamano \emph{bit}
+			che sta per \emph{BINARY DIGIT}; inoltre:
+
+		\begin{itemize}[<+- | alert@+->]
+
+			\item i \emph{bytes} sono raggruppamenti di 8 \emph{bit}s
+			\item i \emph{words} sono raggruppamenti di 16 \emph{bit}s
+			\item i \emph{nibbles} sono raggruppamenti di 4 \emph{bit}s
+
+		\end{itemize}
+
+		\item qualsiasi rappresentazione all'interno di
+			un elaboratore \`e fatta quindi nei termini
+			di sequenze di interruttori che assumono significati
+			diversi a seconda del contesto
+
+	\end{itemize}
+
+\end{frame}
+
+\setcounter{ms}{1}
+\begin{frame}
+    \frametitle{Esempi di Rappresentazione (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item una sequenza numerica:\hfill
+		\uncover<+->{\tiny
+			\begin{tabular}{| c | c |}
+				\hline
+				\multicolumn{2}{|l|}{\ldots}\\
+				\hline
+				5 & 0101 \\
+				\hline
+				7 & 0111 \\
+				\hline
+				11 & 1011\\
+				\hline
+				\multicolumn{2}{|l|}{\ldots}\\
+				\hline
+			\end{tabular}
+		}
+
+		\item un carattere:\hfill
+		\uncover<+->{\tiny
+			\begin{tabular}{| c | c | r |}
+				\hline
+				'N' & 01001101 & (=78)\\
+				\hline
+				'i' & 01101001 & (=105)\\
+				\hline
+				'c' & 01100011 & (=99)\\
+				\hline
+				\multicolumn{3}{|l|}{\ldots}\\
+				\hline
+			\end{tabular}
+		}
+
+		\item un'istruzione:\hfill
+		\uncover<+->{\tiny
+			\begin{tabular}{| c | c | p{0.2\textwidth} |}
+				\hline
+				CMOV & 1000 0000 0000 0000 & (=32768) \\
+				     &                     & sposta un numero da una
+			                                 locazione di memoria ad
+											 un'altra\\
+				\hline
+			\end{tabular}
+		}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+
+    \frametitle{Esempi di Rappresentazione (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Un numero binario pu\`o rappresentare anche altre cose,
+			come:
+
+			\begin{itemize}[<+- | alert@+->]
+          \item{lo stato di un sistema}
+
+					\only<+->{\begin{center}
+              \pgfdeclareimage[width=0.4\textwidth]{status}{\imagedir/status}
+              \pgfuseimage{status}
+          \end{center}}
+
+				\item una condizione logica
+				\only<+->{\scriptsize
+
+					\begin{center}
+					\begin{tabular}{| r  c l |}
+						\hline
+						1 & = & vero\\
+						\hline
+						0 & = & falso\\
+						\hline
+					\end{tabular}
+					\end{center}
+				}
+
+					\only<+->{con la quale \`e possibile
+					costruire dei meccanismi del tipo:
+          \emph{se il bit $x$ \`e vero (= 1) allora\ldots}}
+
+			\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\definecolor{im-light-blue}{rgb}{0.8,0.85,1}
+
+\refstepcounter{ms}
+\begin{frame}
+
+    \frametitle{Esempi di Rappresentazione (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Un numero binario pu\`o rappresentare anche altre cose,
+			come:
+
+			\begin{itemize}[<+- | alert@+->]
+
+        \item{il colore di un pixel (un ``punto'' di uno schermo)}\\
+            \uncover<+- | alert@+->{\colorbox{im-light-blue}{\ \ } = \emph{blu
+            chiaro} = {\tt 0xccd9ff} = 13477733}
+
+        \item{il valore di una misura di pressione dell'aria}
+
+        \item{la posizione di un elemento in una mappa}
+
+        \item \ldots
+
+			\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+    
+    \frametitle{Esempi di Rappresentazione (\arabic{ms})}
+
+	\begin{itemize}
+
+		\item{Numeri Interi segnati (positivi e negativi):
+
+			\begin{center}
+          \pgfdeclareimage[height=0.13\textheight]{sint}{\imagedir/signed-integers}
+          \pgfuseimage{sint}
+      \end{center}
+
+			e i numeri negativi sono codificati in complemento a
+			due, cio\`e invertendo tutti i bit e aggiungendo uno:
+
+			\begin{center}
+          \pgfdeclareimage[height=0.13\textheight]{negative}{\imagedir/negative-92}
+          \pgfuseimage{negative}
+      \end{center}}
+
+		\item{Numeri reali segnati (positivi e negativi):
+
+			\begin{center}
+          \pgfdeclareimage[height=0.18\textheight]{float}{\imagedir/floating-point}
+          \pgfuseimage{float}
+      \end{center}}
+
+	\end{itemize}
+
+\end{frame}

@@ -1,0 +1,76 @@
+%
+% $Id: ad-conversion.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\svnInfo $Id: ad-conversion.tex 8 2014-02-04 21:01:21Z nicb $
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{La Conversione Analogico--Digitale (\arabic{ms})}
+
+    \begin{itemize}[<+- | alert@+->]
+        \item Molti tipi di convertitori (\arabic{ms}):
+
+            \begin{itemize}[<+- | alert@+->]
+                \item convertitori \emph{flash}: banco di comparatori, veloci
+                    ma a pochi bit (i comparatori devono essere $2^n - 1$ per $n$ bits)
+                \item{convertitori ad approssimazione successiva: un solo
+                    comparatore compara iterativamente il segnale in ingresso con quello
+                    emesso da un convertitore Digitale--Analogico interno sino
+                    a trovare la migliore approssimazione ($==$ la differenza
+                    pi\`u piccola)}
+            \end{itemize}
+
+    \end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{La Conversione Analogico--Digitale (\arabic{ms})}
+
+    \begin{itemize}[<+- | alert@+->]
+        \item Molti tipi di convertitori (\arabic{ms}):
+
+            \begin{itemize}[<+- | alert@+->]
+
+                \item{convertitori ad integrazione: un generatore di rampe fa
+                    partire una rampa temporizzata e comparata col segnale
+                    d'ingresso; quando la rampa raggiunge
+                    il valore del segnale d'ingresso
+                    viene misurato il tempo}
+
+                \item{convertitori \emph{sigma--delta}: convertitori
+                    \emph{flash} sovracampionati che misurano con pochi bit il cambiamento
+                    tra valori successivi di un'onda}
+
+            \end{itemize}
+
+    \end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{La Conversione Analogico--Digitale (\arabic{ms})}
+
+    \begin{itemize}[<+- | alert@+->]
+        \item Problemi di conversione
+
+            \begin{itemize}[<+- | alert@+->]
+
+                \item{\emph{jitter} dell'orologio di campionamento
+                    (scostamento dal valore temporale nominale dell'orologio),
+                    che introduce non--linearit\`a nelle misurazioni
+                    (\emph{aperture error})}
+
+                \item{errore di quantizzazione}
+
+                \item{altre non--linearit\`a legate ad imperfezioni di
+                    costruzione}
+
+            \end{itemize}
+
+    \end{itemize}
+
+\end{frame}

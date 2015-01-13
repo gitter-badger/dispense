@@ -1,0 +1,94 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\svnInfo $Id$
+
+\setcounter{ms}{1}
+\begin{frame}
+    \frametitle{Elementi Hardware (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Gli elaboratori digitali sono tutti (o quasi)
+              costituiti da elementi funzionali simili, quali:
+
+			  \begin{itemize}[<+- | alert@+->]
+
+				\item un orologio (\emph{clock}) che sincronizza tutto
+                      il sistema
+				\item un circuito ad alta integrazione denominato CPU
+				      (\emph{Central Processing Unit})
+				\item memoria volatile (\emph{RAM})
+				      e permanente (\emph{ROM})
+				\item uno o pi\`u dischi rigidi per immagazzinare
+				      dati in maniera dinamica
+
+			\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Elementi Hardware (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Altri elementi sono:
+
+			 \begin{itemize}[<+- | alert@+->]
+			 \setlength{\itemsep}{4mm}
+
+				\item una o pi\`u interfacce di I/O
+				      (\emph{Input/Output} = ingresso/uscita)
+					  dedicate a funzioni diverse:
+
+					\vspace{4mm}
+					\begin{itemize}[<+- | alert@+->]
+
+						\item video
+
+						\item tastiera
+
+						\item audio
+
+						\item ecc.
+
+					\end{itemize}
+
+				\item un \emph{bus} (=canale) di comunicazione
+				      di tutti gli elementi
+
+				\item una scheda madre (MB o \emph{Motherboard})
+				      sulla quale risiedono tutti i componenti
+
+			\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Elementi Hardware (\arabic{ms})}
+
+	\begin{center}
+      \pgfdeclareimage[height=0.85\textheight]{hardware-schematics}{\imagedir/hardware-schematics}
+      \pgfuseimage{hardware-schematics}
+	\end{center}
+
+\end{frame}
