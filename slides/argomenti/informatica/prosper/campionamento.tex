@@ -1,0 +1,91 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: campionamento.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\setcounter{ms}{1}
+\begin{slide}{{\small Frequenza di campionamento (\arabic{ms})}}
+
+	\begin{itemize}
+
+		\item Il teorema di Nyquist impone che la frequenza di
+			campionamento sia almeno il doppio della frequenza
+			pi\`u alta che si intende rappresentare.
+
+			\begin{center}
+				\includegraphics[height=0.24\textheight]{\imagedir/wave-downsamp-1}
+
+				\includegraphics[height=0.24\textheight]{\imagedir/wave-downsamp-2}
+
+				\includegraphics[height=0.24\textheight]{\imagedir/wave-downsamp-3}
+			\end{center}
+
+	\end{itemize}
+
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{\small Frequenza di campionamento (\arabic{ms})}}
+{\scriptsize
+	\begin{itemize}
+
+		\item Quando la frequenza di campionamento non \`e sufficiente,
+              si verifica il fenomeno del \emph{foldover}
+			  (ripiegamento delle frequenze attorno alla met\`a
+			  della frequenza di campionamento).
+
+		\item \listento{run: \exampledir/csound_player \exampledir/foldover.csd}{Esperimento:}
+
+			\begin{itemize}
+
+				\item un glissando (prima sinusoidale, poi complesso)
+					  va da 4500 Hz a 6500 Hz;
+					  su un canale \`e campionato a 44100 Hz,
+                      sull'altro a 11025 Hz
+
+					  \begin{center}
+						\includegraphics[height=0.5\textheight]{\imagedir/foldover-explained}
+					  \end{center}
+
+			\end{itemize}
+
+	\end{itemize}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{\small Frequenza di campionamento (\arabic{ms})}}
+{\scriptsize
+	\begin{itemize}
+
+		\item Dato che l'orecchio pu\`o percepire
+			  frequenze sino a 20000 Hz ca.,
+			  \`e opportuno campionare a frequenze superiori a 40000 Hz.
+
+		\item \listento{run: \exampledir/csound_player \exampledir/downsample.csd }{Esperimento:}
+
+			\begin{itemize}
+
+				\item un brano campionato alle frequenze:
+                      1 Hz, 10 Hz, 100 Hz, 980 Hz, 
+                      5512.5 Hz, 11025 Hz, 22050 Hz, 44100 Hz
+
+					  \begin{center}
+						\includegraphics[height=0.58\textheight]{\imagedir/downsampling-explained}
+					  \end{center}
+			\end{itemize}
+
+	\end{itemize}
+}
+\end{slide}

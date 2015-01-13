@@ -1,0 +1,156 @@
+
+% $Id: slides.tex 8 2014-02-04 21:01:21Z nicb $
+%
+% Copyright (C) 2007-2009 Nicola Bernardini nicb@sme-ccppd.org
+% 
+% This work is licensed under a Creative Commons License, and specifically the
+% 
+%   Creative Commons Attribution-ShareAlike 2.5 License
+%   http://creativecommons.org/licenses/by-sa/2.5/legalcode
+% 
+% Check http://www.creativecommons.org/ for more information on
+% Creative Commons Licenses and the Creative Commons Project.
+%
+% Set the macros below to whatever is appropriate in a given context
+%
+
+\newcommand{\AnnoAccademico}{2014-2015}
+\newcommand{\argroot}{../argomenti/informatica}
+\newcommand{\beamerslides}{\argroot/beamer}
+\newcommand{\imagedir}{\argroot/immagini}
+\newcommand{\exampledir}{\argroot/esempi}
+\newcommand{\templatedir}{../../../sperimentazione/Padova/1mo-Triennio/Tecnico_di_Sala/corsi/Elettroacustica/latex/beamer/sme-ccppd}
+\newcommand{\datadir}{.}
+\documentclass[\printmode,compress,xcolor=dvipsnames]{beamer}
+\usepackage{ifthen}
+
+\usepackage{beamerthemeSME-CCPPD}
+%\usepackage{beamercolorthemeSME-CCPPD}
+%\usepackage{beamerinnerthemeSME-CCPPD}
+
+% \ifthenelse{\equal{\printmode}{handout}}%
+% {%
+% 	\usepackage{pgfpages}
+% 	\pgfpagesuselayout{1 on 1}[a4paper,landscape,border shrink=10mm]
+% }{}
+
+\input{\datadir/lecturenumber}
+
+\usepackage{colortbl}
+\usepackage[italian]{babel}
+\usepackage{pgf}
+\usepackage{xspace}
+
+\usepackage{multimedia}
+\usepackage{xmpmulti}
+\usepackage{hyperref}
+\usepackage[nofancy]{svninfo}
+\usepackage{gensymb}
+\usepackage{hhline}
+
+
+\newcommand{\cpyear}{2014, 2015}
+\newcommand{\cpholder}{Nicola Bernardini}
+\newcommand{\cpholderemail}{n.bernardini@conservatoriosantacecilia.it}
+
+% Use some nice templates
+
+%\beamertemplateshadingbackground{red!10}{structure!10}
+\beamertemplatetransparentcovereddynamic
+\beamertemplateballitem
+\beamertemplatenumberedballsectiontoc
+
+% My colors
+\definecolor{notdone}{gray}{0.35}
+
+%\usecolortheme[named=MyColor]{structure}
+%\usecolortheme[named=MyColor]{structure}
+\beamertemplateshadingbackground{white!10}{white!10}
+
+\input{macros}
+
+\title[Storia della Musica III \lectnum]
+{%
+  Informatica di Base\lectnum\\[-0.25\baselineskip]
+	{\tiny (\rcstag)}
+}
+
+\author{%
+	Nicola Bernardini\\
+    \href{mailto:\cpholderemail}{\cpholderemail}
+}
+\institute[SMERM]%
+{%
+	\href{http://www.conservatoriosantacecilia.it}
+		 {Conservatorio di Musica ``S.Cecilia'' -- Roma}\\
+	\hhref{http://www.conservatoriosantacecilia.it}
+}
+\date[Roma \AnnoAccademico]{Conservatorio di Roma - A.A. \AnnoAccademico}
+
+\begin{document}
+\svnInfo $Id: slides.tex 8 2014-02-04 21:01:21Z nicb $
+\newcounter{ms}
+\newcounter{lectno}
+  
+%%%% START %%%%
+
+\begin{frame}
+	\titlepage
+\end{frame}
+  
+% ../argomenti/informatica/beamer/funzionamento.tex
+% ../argomenti/informatica/beamer/hardware-generico.tex
+% ../argomenti/informatica/beamer/hardware-generico-advanced.tex
+% ../argomenti/informatica/beamer/rappresentazione-digitale-0.tex
+% ../argomenti/informatica/beamer/rappresentazione-digitale.tex
+% ../argomenti/informatica/beamer/rappresentazione-digitale-nicb.tex
+% ../argomenti/informatica/beamer/sistema-binario.tex
+% ../argomenti/informatica/beamer/logica-booleana.tex
+% ../argomenti/informatica/beamer/ottale-esadecimale.tex
+% ../argomenti/informatica/beamer/tr_vs_td.tex
+% ../argomenti/informatica/beamer/funzioni-continue.tex
+% ../argomenti/informatica/beamer/ad-conversion.tex
+% ../argomenti/informatica/beamer/da-conversion.tex
+% ../argomenti/informatica/beamer/campionamento.tex
+% ../argomenti/informatica/beamer/campionamento-avanzato.tex
+% 
+% ../argomenti/informatica/beamer/bufferizzazione.tex
+% ../argomenti/informatica/beamer/dithering.tex
+% ../argomenti/informatica/beamer/hardware-dedicato-advanced.tex
+% ../argomenti/informatica/beamer/hardware-dedicato.tex
+% ../argomenti/informatica/beamer/latenza.tex
+% ../argomenti/informatica/beamer/quantizzazione.tex
+
+\refstepcounter{lectno}
+\lecture{(\arabic{lectno}) Introduzione}{01}
+\part{Lezione \arabic{lectno}}
+\section{Introduzione}
+
+\slideinput{rappresentazione-digitale-0}
+\slideinput{rappresentazione-digitale}
+\slideinput{rappresentazione-digitale-nicb}
+\slideinput{sistema-binario}
+\slideinput{ottale-esadecimale}
+\slideinput{logica-booleana}
+\slideinput{funzionamento}
+\slideinput{hardware-generico}
+\slideinput{hardware-generico-advanced}
+\slideinput{funzioni-continue}
+\slideinput{ad-conversion}
+\slideinput{da-conversion}
+\slideinput{campionamento}
+\slideinput{campionamento-avanzato}
+\slideinput{tr_vs_td}
+
+%
+% strumentario:
+% - emulatore di terminale -> shell
+% - command line interface (CLI)
+% - interfaccia grafica vs comandi testuali
+% - ergonomia, user-friendliness, ecc.
+% - barriera della complessità
+% - introduzione alla programmazione
+% - il mondo del Software Libero
+%
+
+\end{document}

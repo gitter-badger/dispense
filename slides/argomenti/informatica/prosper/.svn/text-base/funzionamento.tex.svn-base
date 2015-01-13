@@ -1,0 +1,51 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\setcounter{ms}{1}
+\begin{slide}{Esempio schematico}
+{
+
+	\begin{itemize}
+	
+		\item Nello schema che segue viene delineato
+			  ci\`o che avviene quando l'utilizzatore
+              schiaccia il tasto {\bfseries A} sulla tastiera
+              di un computer.
+
+			  \begin{center}
+				\includegraphics[height=0.7\textheight]{\imagedir/functional-example}
+			  \end{center}
+
+	\end{itemize}
+}
+\end{slide}
+
+
+\begin{slide}{Sequenza di \emph{boot}}
+{
+
+	\begin{itemize}
+	
+		\item La ``sequenza di \emph{boot}'' (= calcio d'inizio)
+			  di un computer pu\`o essere approssimata come segue:
+
+			  \begin{center}
+				\includegraphics[height=0.75\textheight]{\imagedir/boot-sequence}
+			  \end{center}
+
+	\end{itemize}
+}
+\end{slide}

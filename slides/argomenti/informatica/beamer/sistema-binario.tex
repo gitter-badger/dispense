@@ -1,0 +1,83 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: sistema-binario.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\svnInfo $Id: sistema-binario.tex 8 2014-02-04 21:01:21Z nicb $
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Il sistema binario (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+		\item Funziona esattamente nello stesso modo
+			  del sistema decimale, ma con due soli simboli (0-1)
+			  al posto di dieci (0-9)
+		\item se $3047 = ( 7 \times 10^0 ) +
+                      ( 4 \times 10^1 ) +
+                      ( 0 \times 10^2 ) +
+                      ( 3 \times 10^3 )$
+		\item allora $1101 = ( 1 \times 2^0 ) +
+                        ( 0 \times 2^1 ) +
+                        ( 1 \times 2^2 ) +
+                        ( 1 \times 2^3 ) = 13$
+    \end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Il sistema binario (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Quindi basta ricordarsi le prime 16 potenze di due
+              per poter contare sino a 65535\ldots:
+			  \begin{center}
+			  {\tiny
+			  \begin{tabular}{l p{0.01\textwidth} r |
+			                  l p{0.01\textwidth} r |
+							  l p{0.01\textwidth} r |
+							  l p{0.01\textwidth} r}
+				$2^0$ & $=$ & $1$ &
+				$2^1$ & $=$ & $2$ &
+				$2^2$ & $=$ & $4$ &
+				$2^3$ & $=$ & $8$ \\
+				$2^4$ & $=$ & $16$ &
+				$2^5$ & $=$ & $32$ &
+				$2^6$ & $=$ & $64$ &
+				$2^7$ & $=$ & $128$ \\
+				$2^8$ & $=$ & $256$ &
+				$2^9$ & $=$ & $512$ &
+				$2^{10}$ & $=$ & $1024$ &
+				$2^{11}$ & $=$ & $2048$ \\
+				$2^{12}$ & $=$ & $4096$ &
+				$2^{13}$ & $=$ & $8192$ &
+				$2^{14}$ & $=$ & $16384$ &
+				$2^{15}$ & $=$ & $32768$ \\
+			  \end{tabular}
+			  }
+			  \end{center}
+
+		\item il che significa anche che con $n$ bits
+              si pu\`o rappresentare $2^{n}$
+			  stati (o numeri, o lettere, o istruzioni, ecc.) -- da zero sino a $2^{n-1}$;
+		      ad esempio, con 5 bits si pu\`o contare da zero fino
+			  a 31, con 14 bits sino 16383,
+		      con 27 bits sino a 134.217.727, ecc.
+
+	\end{itemize}
+
+\end{frame}

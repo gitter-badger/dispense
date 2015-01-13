@@ -1,0 +1,24 @@
+#
+# $Id: wave-downsamp-1.gplot,v 0.0 2004/12/14 22:25:55 nicb Exp $
+#
+set term postscript eps monochrome
+set samples 100
+set xzeroaxis
+set yzeroaxis
+#set size 1,1.1
+#
+#
+frq=300
+max=32768
+pi2=pi*2
+plot [-0.005:0.02] ((max*sin(pi2*frq*x))+(pi/3))+\
+		   (((max/2)*sin(pi2*2*frq*x))+(pi/7))+\
+		   ((max/3)*sin(pi2*3*frq*x)) notitle w boxes
+#
+# $Log: wave-downsamp-1.gplot,v $
+# Revision 0.0  2004/12/14 22:25:55  nicb
+# [added by nicb@sme-ccppd.org]
+#
+# Revision 1.1  1999/11/30 17:26:41  nicb
+# Added lesson 5
+#

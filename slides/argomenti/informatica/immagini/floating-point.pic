@@ -1,0 +1,45 @@
+.PS
+scale=2.54
+boxsize=0.7
+boxht=boxsize
+boxwid=boxsize
+ExponentSign: box "0"
+Exponent1: box with .w at ExponentSign.e "0"
+Exponent2: box with .w at Exponent1.e "1"
+Exponent3: box with .w at Exponent2.e "1"
+MantissaSign: box with .w at Exponent3.e "0"
+Mantissa1: box with .w at MantissaSign.e "0"
+Mantissa2: box with .w at Mantissa1.e "0"
+Mantissa3: box with .w at Mantissa2.e "1"
+Mantissa4: box with .w at Mantissa3.e "1"
+Mantissa5: box with .w at Mantissa4.e "0"
+Mantissa6: box with .w at Mantissa5.e "1"
+Mantissa7: box with .w at Mantissa6.e "0"
+Mantissa8: box with .w at Mantissa7.e "1"
+Mantissa9: box with .w at Mantissa8.e "1"
+Mantissa10: box with .w at Mantissa9.e "1"
+Mantissa11: box with .w at Mantissa10.e "1"
+Mantissa12: box with .w at Mantissa11.e "1"
+box invis wid boxsize*8 with .w at Mantissa12.e \
+	"= 0.2106 x 2\u3\d = 1.6848"
+#
+EBracket: line from ExponentSign.sw - (0,0.1) \
+          to ExponentSign.sw - (0,0.2) \
+          to Exponent3.se - (0,0.2) \
+	  to Exponent3.se - (0,0.1) thick 1.5
+"\s-2Esponente\s0" with .n at Exponent2.s - (0,0.6)
+#
+MBracket: line from MantissaSign.sw - (0,0.1) \
+          to MantissaSign.sw - (0,0.2) \
+          to Mantissa12.se - (0,0.2) \
+	  to Mantissa12.se - (0,0.1) thick 1.5
+"\s-2Mantissa\s0" with .n at Mantissa6.s - (0,0.6)
+#
+Expsign: box invis wid boxsize*8 with .nw at ExponentSign.se + (0.1,-1.5) \
+	   "segno dell'esponente"
+spline -> from Expsign.w to Expsign.w - (0.5,0) to ExponentSign.s - (0,0.3)
+#
+Mantsign: box invis wid boxsize*8 with .nw at MantissaSign.se + (0.1,-0.8) \
+	   "segno della mantissa"
+spline -> from Mantsign.w to Mantsign.w - (0.5,0) to MantissaSign.s - (0,0.3)
+.PE

@@ -1,0 +1,75 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: campionamento-avanzato.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\svnInfo $Id: campionamento-avanzato.tex 8 2014-02-04 21:01:21Z nicb $
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Campionamento (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+      \item Tecnicamente, il ``campionamento'' \`e interpretabile
+          come ``la modulazione d'ampiezza di una funzione periodica
+          impulsiva''
+
+	\end{itemize}
+
+\end{frame}
+\newcounter{saved_camp_ms}
+\setcounter{saved_camp_ms}{\value{ms}}
+
+
+\setcounter{ms}{\value{saved_camp_ms}}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Campionamento (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+        \item Nel caso del campionamento, la forma d'onda portante (i.e.
+            l'impulso di campionamento) produce uno spettro autosimile:
+
+            \begin{center}
+                \pgfimage<+->[height=0.6\textheight,interpolate=true]{\imagedir/impulse-partials} 
+            \end{center}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Campionamento (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+        \item Quando la \emph{frequenza di Nyquist}
+            scende al di sotto delle frequenze che si intendono rappresentare,
+            si ha il fenomeno dell'\emph{aliasing} (detto anche \emph{foldover}):
+
+            \begin{center}
+                \only<+>{\pgfimage[width=0.85\textwidth,interpolate=true]{\imagedir/sampling-aliasing-00}}%
+                \only<+>{\pgfimage[width=0.85\textwidth,interpolate=true]{\imagedir/sampling-aliasing-01}}%
+                \only<+>{\pgfimage[width=0.85\textwidth,interpolate=true]{\imagedir/sampling-aliasing-02}}%
+                \only<+>{\pgfimage[width=0.85\textwidth,interpolate=true]{\imagedir/sampling-aliasing-03}}%
+%                \pgfimage[width=0.85\textwidth]{\imagedir/sampling-aliasing-03}%
+            \end{center}
+
+	\end{itemize}
+
+\end{frame}

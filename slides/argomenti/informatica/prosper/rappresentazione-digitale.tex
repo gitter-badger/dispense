@@ -1,0 +1,170 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: rappresentazione-digitale.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\setcounter{ms}{1}
+\begin{slide}{Rappresentazioni numeriche}
+{\scriptsize
+	\begin{itemize}
+
+		\item I calcolatori sono un insieme molto elevato di transistors
+			bistabili (= che possono emettere solo due valori di tensione)
+
+		\item I calcolatori possono quindi essere assimilati ad
+			enormi collezioni di interruttori,
+			i quali possono trovarsi in due posizioni sole
+			(acceso o spento, oppure 0 o 1)
+
+		\item questi interruttori si chiamano \emph{bit}
+			che sta per \emph{BINARY DIGIT}; inoltre:
+
+		\begin{itemize}
+
+			\item i \emph{bytes} sono raggruppamenti di 8 \emph{bit}s
+			\item i \emph{words} sono raggruppamenti di 16 \emph{bit}s
+			\item i \emph{nibbles} sono raggruppamenti di 4 \emph{bit}s
+
+		\end{itemize}
+
+		\item qualsiasi rappresentazione all'interno di
+			un elaboratore \`e fatta quindi nei termini
+			di sequenze di interruttori che assumono significati
+			diversi a seconda del contesto
+
+	\end{itemize}
+}
+\end{slide}
+
+\setcounter{ms}{1}
+\begin{slide}{Esempi di Rappresentazione (\arabic{ms})}
+{
+	\begin{itemize}
+
+		\item una sequenza numerica:\hfill
+		{\tiny
+			\begin{tabular}{| c | c |}
+				\hline
+				\multicolumn{2}{|l|}{\ldots}\\
+				\hline
+				5 & 0101 \\
+				\hline
+				7 & 0111 \\
+				\hline
+				11 & 1011\\
+				\hline
+				\multicolumn{2}{|l|}{\ldots}\\
+				\hline
+			\end{tabular}
+		}
+
+		\item un carattere:\hfill
+		{\tiny
+			\begin{tabular}{| c | c | r |}
+				\hline
+				'N' & 01001101 & (=78)\\
+				\hline
+				'i' & 01101001 & (=105)\\
+				\hline
+				'c' & 01100011 & (=99)\\
+				\hline
+				\multicolumn{3}{|l|}{\ldots}\\
+				\hline
+			\end{tabular}
+		}
+
+		\item un'istruzione:\hfill
+		{\tiny
+			\begin{tabular}{| c | c | p{0.2\textwidth} |}
+				\hline
+				CMOV & 1000 0000 0000 0000 & (=32768) \\
+				     &                     & sposta un numero da una
+			                                 locazione di memoria ad
+											 un'altra\\
+				\hline
+			\end{tabular}
+		}
+
+	\end{itemize}
+
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Esempi di Rappresentazione (\arabic{ms})}
+{
+	\begin{itemize}
+
+		\item Un numero binario pu\`o rappresentare anche altre cose,
+			come:
+
+			\begin{itemize}
+				\item lo stato di un sistema
+
+					\begin{center}
+					\includegraphics[width=0.4\textwidth]{\imagedir/status}
+					\end{center}
+
+				\item una condizione logica
+				{\scriptsize
+
+					\begin{center}
+					\begin{tabular}{| r  c l |}
+						\hline
+						1 & = & vero\\
+						\hline
+						0 & = & falso\\
+						\hline
+					\end{tabular}
+					\end{center}
+				}
+
+					con la quale \`e possibile
+					costruire dei meccanismi del tipo:
+					\emph{se il bit $x$ \`e vero (= 1) allora\ldots}
+
+			\end{itemize}
+
+	\end{itemize}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Esempi di Rappresentazione (\arabic{ms})}
+{
+	\begin{itemize}
+
+		\item Numeri Interi segnati (positivi e negativi):
+
+			\begin{center}
+				\includegraphics[height=0.13\textheight]{\imagedir/signed-integers}
+			\end{center}
+
+			e i numeri negativi sono codificati in complemento a
+			due, cio\`e invertendo tutti i bit e aggiungendo uno:
+
+			\begin{center}
+				\includegraphics[height=0.13\textheight]{\imagedir/negative-92}
+			\end{center}
+
+		\vspace*{-5mm}
+		\item Numeri reali segnati (positivi e negativi):
+
+			\begin{center}
+				\includegraphics[height=0.18\textheight]{\imagedir/floating-point}
+			\end{center}
+
+	\end{itemize}
+}
+\end{slide}

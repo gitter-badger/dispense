@@ -1,0 +1,220 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: hardware-generico.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\setcounter{ms}{1}
+\begin{slide}{{Elementi Hardware (\arabic{ms})}}
+{
+	\begin{itemize}
+	\setlength{\itemsep}{10mm}
+
+		\item Gli elaboratori digitali sono tutti (o quasi)
+              costituiti da elementi funzionali simili, quali:
+
+			  \begin{itemize}
+			  \setlength{\itemsep}{8mm}
+
+				\item un orologio (\emph{clock}) che sincronizza tutto
+                      il sistema
+				\item un circuito ad alta integrazione denominato CPU
+				      (\emph{Central Processing Unit})
+				\item memoria volatile (\emph{RAM})
+				      e permanente (\emph{ROM})
+				\item uno o pi\`u dischi rigidi per immagazzinare
+				      dati in maniera dinamica
+
+			\end{itemize}
+
+	\end{itemize}
+
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{Elementi Hardware (\arabic{ms})}}
+{
+
+	\begin{itemize}
+
+		\item Altri elementi sono:
+
+			 \begin{itemize}
+			 \setlength{\itemsep}{4mm}
+
+				\item una o pi\`u interfacce di I/O
+				      (\emph{Input/Output} = ingresso/uscita)
+					  dedicate a funzioni diverse:
+
+					\vspace{4mm}
+					\begin{itemize}
+
+						\item video
+
+						\item tastiera
+
+						\item audio
+
+						\item ecc.
+
+					\end{itemize}
+
+				\item un \emph{bus} (=canale) di comunicazione
+				      di tutti gli elementi
+
+				\item una scheda madre (MB o \emph{Motherboard})
+				      sulla quale risiedono tutti i componenti
+
+			\end{itemize}
+
+	\end{itemize}
+
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{Elementi Hardware (\arabic{ms})}}
+{
+
+	\begin{center}
+		\includegraphics[height=0.95\textheight]{\imagedir/hardware-schematics}
+	\end{center}
+
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{Elementi Hardware (\arabic{ms})}}
+{
+
+	\begin{itemize}
+	\setlength{\itemsep}{10mm}
+
+		\item L'orologio sincronizza tutte le operazioni
+			  e le comunicazioni che avvengono sulla
+			  scheda madre
+
+		\item le CPU pi\`u recenti usano un multiplo del clock della scheda madre per
+			  le istruzioni interne (dato che, in generale,
+			  un'istruzione della CPU ha bisogno di pi\`u cicli per essere
+			  ultimata)
+
+		\item in linea generale, la CPU accede a tutte le periferiche
+		      attraverso delle zone di memoria specializzate
+			  dette \emph{registri}, le quali si trovano ad indirizzi ben definiti
+			  e separati dalla memoria convenzionale
+
+	\end{itemize}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{Elementi Hardware (\arabic{ms})}}
+{
+
+	\begin{itemize}
+
+		\item il \emph{bus} \`e una collezione di linee elettriche
+              in numero sufficiente per ospitare:
+
+			  \vspace{8mm}
+			  \begin{itemize}
+			  \setlength{\itemsep}{8mm}
+
+				\item l'indirizzamento di memoria (8, 16, 32 o 64 linee)
+
+				\item i dati in lettura/scrittura dalla memoria
+
+				\item segnali (\emph{interrupts})
+
+				\item ecc.
+
+			  \end{itemize}
+
+	\end{itemize}
+}
+\end{slide}
+
+\setcounter{ms}{1}
+\begin{slide}{{I Dischi Rigidi (\arabic{ms})}}
+{
+
+	\begin{itemize}
+
+		\item I dischi rigidi contengono varie parti funzionalmente diverse:
+
+			\vspace{6mm}
+			\begin{itemize}
+			\setlength{\itemsep}{4mm}
+
+				\item la \emph{file allocation table} (\emph{FAT})
+                      che definisce
+
+				\item la mappatura tra nomi simbolici dei files
+				      e gruppo di indirizzi ai quali questi files
+					  fanno riferimento (\emph{clusters})
+
+				\item la struttura gerarchica dei nomi simbolici
+                      (\emph{directories}, \emph{files}, ecc.)
+
+				\item eventuali altre caratteristiche
+                      (\emph{links}, ecc.)
+
+			\end{itemize}
+
+	\end{itemize}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{I Dischi Rigidi (\arabic{ms})}}
+{
+
+	\begin{itemize}
+	\setlength{\itemsep}{8mm}
+
+		\item I dischi rigidi contengono varie parti funzionalmente diverse:
+
+			\vspace{6mm}
+			\begin{itemize}
+
+				\item la zona dati, che a sua volta \`e suddivisa in
+
+					\begin{itemize}
+
+						\item settori
+
+						\item blocchi
+
+					\end{itemize}
+
+			\end{itemize}
+
+		\item Un file occupa sempre una dimensione multipla
+		      della dimensione dei blocchi.
+
+	\end{itemize}
+}
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{{I Dischi Rigidi (\arabic{ms})}}
+{
+
+	\begin{center}
+		\includegraphics[height=0.95\textheight]{\imagedir/disk-logical-structure}
+	\end{center}
+	
+}
+\end{slide}

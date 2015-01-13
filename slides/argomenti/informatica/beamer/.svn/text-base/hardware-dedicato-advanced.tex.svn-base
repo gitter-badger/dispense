@@ -1,0 +1,95 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\svnInfo $Id$
+
+\setcounter{ms}{1}
+\begin{frame}
+    \frametitle{Strutture Host/DSP (\arabic{ms})}
+
+		\begin{itemize}[<+- | alert@+->]
+		\setlength{\itemsep}{12mm}
+
+			\item Alcuni strumenti in tempo reale sono
+                  computers specializzati nell'elaborazione numerica
+                  (denominati \emph{Digital Signal Processor}s
+                  o \emph{DSP}).
+
+		    \item Tali computers non possiedono sistema
+				  operativo proprio (o ne possiedono uno minimale)
+				  e sono generalmente controllati da un
+				  computer generico (denominato \emph{host}).
+
+		\end{itemize}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}{Strutture Host/DSP (\arabic{ms})}
+
+	\begin{center}
+      \pgfdeclareimage[height=0.85\textheight]{hostdsp}{\imagedir/host-dsp-structure}
+      \pgfuseimage{hostdsp}
+	\end{center}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Strutture Host/DSP}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item In una struttura \emph{Host-DSP},
+			  il software DSP viene caricato volta per volta
+			  dall'\emph{host} nel \emph{DSP},
+			  il quale lo esegue ricorsivamente
+			  sino al caricamento seguente.
+
+	\end{itemize}
+
+  \only<+->{
+	\begin{center}
+    \pgfdeclareimage[height=0.6\textheight]{hostdspschema}{\imagedir/host-dsp-schema}
+    \pgfuseimage{hostdspschema}
+  \end{center}}
+
+\end{frame}
+
+\stepcounter{ms}
+\begin{frame}
+    \frametitle{Strutture Host/DSP}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Le strutture hardware pi\`u diffuse sono
+              attualmente DSP \emph{stand-alone}
+              (=autonomi), che assumono generalmente
+              la forma di tastiere o expanders.
+
+		\item Strutture del genere sono simili a strutture
+              \emph{host-DSP} nelle quali
+              il software \`e stato pre-caricato
+              e memorizzato in memorie a sola lettura (\emph{ROM}).
+
+	\end{itemize}
+
+	\only<+->{\begin{center}
+      \pgfdeclareimage[height=0.45\textheight]{standalone}{\imagedir/stand-alone}
+      \pgfuseimage{standalone}
+  \end{center}}
+
+\end{frame}

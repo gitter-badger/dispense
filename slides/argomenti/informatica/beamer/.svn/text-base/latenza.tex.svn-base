@@ -1,0 +1,60 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\svnInfo $Id$
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+	\frametitle{Latenza di sistema (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Negli strumenti operanti in tempo reale,
+              uno dei parametri pi\`u critici \`e la \emph{latenza}
+              del sistema, vale a dire il tempo di risposta
+              ai comandi dello strumentista:
+
+	\end{itemize}
+
+  \begin{figure}[H]
+      \begin{center}
+		    \pgfimage[height=0.5\textheight]{\imagedir/latency-timing}
+      \end{center}
+      \label{fig:latency timing}
+  \end{figure}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+	\frametitle{Latenza di sistema (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Nelle strutture dedicate (tipo \emph{host-DSP}),
+              la latenza del sistema \`e generalmente
+              fissa e dura pochi cicli macchina
+              (cio\`e pochi microsecondi);
+
+		\item Nelle macchine generiche invece,
+              la latenza \`e molto pi\`u difficile da prevedere,
+              perch\'e i sistemi operativi funzionanti
+              su tali macchine sono molto pi\`u complessi
+
+	\end{itemize}
+
+\end{frame}

@@ -1,0 +1,53 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+\setcounter{ms}{1}
+\begin{slide}{Errore di Quantizzazione (\arabic{ms})}
+
+	\begin{itemize}
+
+		\item L'errore di quantizzazione dipende
+		      dal numero di bit con i quali si
+			  campiona un segnale:
+
+			  \begin{center}
+				\includegraphics[height=0.75\textheight]{\imagedir/wave-quantize}
+			  \end{center}
+
+	\end{itemize}
+
+\end{slide}
+
+\stepcounter{ms}
+\begin{slide}{Errore di Quantizzazione (\arabic{ms})}
+
+	\begin{itemize}
+
+		\item \listento{run: \exampledir/csound_player \exampledir/quantize.csd}{Esperimento:}
+
+		\begin{itemize}
+
+			\item un brano campionato con 1 bit,
+			      2 bit, 4 bit, 5 bit, 8 bit, 16 bit
+
+				\begin{center}
+					\includegraphics[height=0.7\textheight]{\imagedir/quantize-explained}
+				\end{center}
+
+		\end{itemize}
+
+	\end{itemize}
+
+\end{slide}

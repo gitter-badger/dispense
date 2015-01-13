@@ -1,0 +1,90 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id$
+%
+\svnInfo $Id$
+
+\setcounter{ms}{0}
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{La logica booleana (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item Oltre all'aritmetica, che funziona come per tutti gli altri
+		      sistemi di simboli, vengono spesso usate le seguenti
+			  operazioni logiche (logica booleana):
+
+			\begin{itemize}[<+- | alert@+->]
+
+				\item {\bfseries AND}: $1010~``AND''~0011 = 0010$
+					\hfill
+					\begin{tabular}{c | c c}
+						AND & 0 & 1\\
+						\hline
+						0 & 0 & 0\\
+						1 & 0 & 1\\
+					\end{tabular}
+
+					{\itshape (se sono riposato {\bfseries E}
+					fa bel tempo sono contento\ldots)}
+
+				\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{La logica booleana (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+		\item[~]
+
+			\begin{itemize}[<+- | alert@+->]
+			\setlength{\itemsep}{10mm}
+
+				\item {\bfseries OR}: $1010~``OR''~0011 = 1011$
+					\hfill
+					\begin{tabular}{c | c c}
+						OR & 0 & 1\\
+						\hline
+						0 & 0 & 1\\
+						1 & 1 & 1\\
+					\end{tabular}
+
+					{\itshape (se sono riposato {\bfseries O}
+					  fa bel tempo sono contento\ldots)}
+
+				\item {\bfseries XOR}: $1010~``XOR''~0011 = 1001$
+					\hfill
+					\begin{tabular}{c | c c}
+						XOR & 0 & 1\\
+						\hline
+						0 & 0 & 1\\
+						1 & 1 & 0\\
+					\end{tabular}
+
+					{\itshape (sono contento se sono riposato {\bfseries E}
+					 non fa bel tempo {\bfseries OPPURE} se non sono riposato
+					 {\bfseries E} fa bel tempo\ldots)}
+
+				\end{itemize}
+
+	\end{itemize}
+
+\end{frame}

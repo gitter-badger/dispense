@@ -1,0 +1,120 @@
+#
+# Author: Nicola Bernardini <nicb@sme-ccppd.org>
+#
+# Copyright (c) 2004 Nicola Bernardini
+# Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+# CVSId : $Id$
+#
+OBJS=$(EPSOBJS) $(PNGOBJS) $(PDFOBJS)
+EPSOBJS=floating-point.eps negative-92.eps signed-integers.eps status.eps\
+	functional-example.eps boot-sequence.eps hexadecimal.eps \
+	octal.eps hexadecimal.eps foldover-explained.eps foldover.eps\
+    downsample.eps downsampling-explained.eps wave-downsamp-1.eps \
+	wave-downsamp-3.eps wave-downsamp-2.eps wave-orig-steps.eps \
+	wave-orig.eps wave-quantize.eps wave-sampling.eps quantize-explained.eps\
+	hardware-schematics.eps disk-logical-structure.eps \
+    host-dsp-schema.eps host-dsp-structure.eps stand-alone.eps \
+    generic-schema.eps latency-timing.eps bufferization.eps
+PNGOBJS= status.png functional-example.png boot-sequence.png hexadecimal.png \
+	octal.png hexadecimal.png foldover-explained.png\
+    downsampling-explained.png quantize-explained.png\
+	hardware-schematics.png disk-logical-structure.png \
+    host-dsp-schema.png host-dsp-structure.png stand-alone.png \
+    generic-schema.png latency-timing.png bufferization.png\
+		wave-orig.png wave-orig-steps.png
+PDFOBJS= floating-point.pdf negative-92.pdf signed-integers.pdf\
+	  wave-downsamp-1.pdf wave-downsamp-2.pdf wave-downsamp-3.pdf wave-orig-steps.pdf \
+		wave-orig.pdf wave-quantize.pdf wave-sampling.pdf\
+		nicb-sampling-00.pdf nicb-sampling-01.pdf nicb-sampling-02.pdf\
+		nicb-sampling-03.pdf nicb-sampling-04.pdf nicb-sampling-05.pdf\
+		wave-sampling-0.pdf wave-sampling-1.pdf wave-sampling-2.pdf\
+		impulse-partials.pdf\
+		sampling-aliasing-00.pdf sampling-aliasing-01.pdf sampling-aliasing-02.pdf\
+		sampling-aliasing-03.pdf analog-chain.pdf digital-chain.pdf vari_samp.pdf vari_quant.pdf
+REMOVABLES=temp.eps *.svg
+MUP=mup
+DJPEG=djpeg
+GS=gs
+FIG2DEV=fig2dev
+GNUPLOT=gnuplot
+PNMTOPS=pnmtops -noturn
+PSTOPNM=pstopnm -stdout -landscape
+PNMTOPNG=pnmtopng
+PSTOEPS=ps2eps
+EPSTOPDF=epstopdf
+MATLAB=octave -q
+PIC=groff -p -mpic
+ISCONVERT=inkscape -d 150
+CAT=cat -s
+SED=sed
+
+all: $(OBJS)
+
+clean:
+	$(RM) $(OBJS) $(MIDIOBJS) $(REMOVABLES) *.bak
+
+.SUFFIXES: .png .eps .pic .pdf .mid .mup .xfig .fig .gplot .jpg .m .svg.in
+
+%.eps:	%.mup
+	$(MUP) $< | $(PSTOEPS) > $@
+
+%.eps:	%.xfig
+	$(FIG2DEV) -L eps $< > $@	
+
+%.png:	%.fig
+	$(FIG2DEV) -L png $< > $@	
+
+%.png:	%.xfig
+	$(FIG2DEV) -L png $< > $@	
+
+%.png:	%.fig
+	$(FIG2DEV) -L png $< > $@	
+
+%.pic:	%.xfig
+	$(FIG2DEV) -L pic -p allps $< > $@	
+
+%.eps:	%.gplot
+	$(GNUPLOT) $< > $@
+
+%.png:	%.eps
+	$(PSTOPNM) $< | $(PNMTOPNG) > $@
+
+%.eps:	%.jpg
+	$(DJPEG) -grayscale -pnm $< | $(PNMTOPS) | $(PSTOEPS) -- > $@
+
+%.eps:  %.pic
+	$(PIC) $< | $(PSTOEPS) -- > $@
+
+%.pdf:  %.pic
+	$(PIC) $< | $(PSTOEPS) -- | $(EPSTOPDF) --filter  > $@
+
+%.pdf: %.svg
+	$(ISCONVERT) -A $@ $<
+
+%.pdf:	%.gplot
+	$(GNUPLOT) $< | $(EPSTOPDF) --filter > $@
+
+%.pdf:  %.m
+	$(MATLAB) $<
+	$(EPSTOPDF) $*.eps
+
+%.pdf:	%.xfig
+	$(FIG2DEV) -L pdf -p allps $< > $@	
+
+%.svg:  %.svg.in
+	$(SED) -e '/absref/s/\/home\/.*\///' $< > $@

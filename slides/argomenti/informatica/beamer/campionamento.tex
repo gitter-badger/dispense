@@ -1,0 +1,172 @@
+%
+% Author: Nicola Bernardini <nicb@sme-ccppd.org>
+%
+% Copyright (c) 2004 Nicola Bernardini
+% Copyright (c) 2004 Conservatorio "C.Pollini", Padova
+%
+% This work is licensed under the Creative Commons 
+% Attribution-ShareAlike License. To 
+% view a copy of this license, visit 
+% http://creativecommons.org/licenses/by-sa/2.0/ 
+% or send a letter to Creative Commons, 
+% 559 Nathan Abbott Way, Stanford, California 94305, USA.
+%
+% Some rights reserved.
+% CVSId : $Id: campionamento.tex 8 2014-02-04 21:01:21Z nicb $
+%
+\svnInfo $Id: campionamento.tex 8 2014-02-04 21:01:21Z nicb $
+
+\setcounter{ms}{1}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+	\begin{itemize}[<+- | alert@+->]
+
+      \item Ogni quanto tempo devo misurare una funzione continua?
+
+      \item Il \emph{teorema di Shannon} dice che
+          
+        \vspace{2ex}
+       \begin{quote}
+       \uncover<+- | alert@+->{una funzione periodica di frequenza data
+          \`e completamente rappresentata da una serie di punti equi--spaziati nel tempo}
+       \uncover<+- | alert@+->{se la frequenza di questi punti \`e almeno \emph{il doppio} della
+       funzione periodica che si intende rappresentare.}
+      \end{quote}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+		\begin{center}
+    \begin{figure}
+			\pgfimage<+->[height=0.7\textheight]{\imagedir/wave-downsamp-1}
+      \caption{\scriptsize Freq. fond: $300 Hz$, Periodo di campionamento: $250 {\mu}sec$ ($= 4000 Hz$)}
+    \end{figure}
+		\end{center}
+
+\end{frame}
+
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+		\begin{center}
+    \begin{figure}
+			\pgfimage<+->[height=0.7\textheight]{\imagedir/wave-downsamp-2}
+      \caption{\scriptsize Freq. fond: $300 Hz$, Periodo di campionamento: $500 {\mu}sec$ ($= 2000 Hz$)}
+    \end{figure}
+		\end{center}
+
+\end{frame}
+
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+		\begin{center}
+    \begin{figure}
+			\pgfimage<+->[height=0.7\textheight]{\imagedir/wave-downsamp-3}
+      \caption{\scriptsize Freq. fond: $300 Hz$, Periodo di campionamento: $2.5 msec$ ($= 400 Hz$)}
+    \end{figure}
+		\end{center}
+
+\end{frame}
+
+
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+		\begin{center}
+			\pgfimage<+->[height=0.7\textheight]{\imagedir/vari_samp}
+		\end{center}
+
+\end{frame}
+
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+	\begin{itemize}
+
+		\item Quando la frequenza di campionamento non \`e sufficiente,
+              si verifica il fenomeno del \emph{aliasing} (anche detto \emph{foldover})
+			  (ripiegamento delle frequenze attorno alla met\`a
+			  della frequenza di campionamento).
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+  \vspace{-1ex}
+	\begin{itemize}
+
+		\item \listento{run: audacity \exampledir/foldover.wav}{Esperimento:}
+
+      \vspace{-1ex}
+			\begin{itemize}
+
+				\item un glissando (prima sinusoidale, poi complesso)
+					  va da 4500 Hz a 6500 Hz;
+					  su un canale \`e campionato a 44100 Hz,
+                      sull'altro a 11025 Hz
+
+					  \begin{center}
+						\pgfimage[height=0.5\textheight]{\imagedir/foldover-explained}
+					  \end{center}
+
+			\end{itemize}
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+	\begin{itemize}
+
+		\item Dato che l'orecchio pu\`o percepire
+			  frequenze sino a 20000 Hz ca.,
+			  \`e opportuno campionare a frequenze superiori a 40000 Hz.
+
+	\end{itemize}
+
+\end{frame}
+
+\refstepcounter{ms}
+\begin{frame}
+    \frametitle{Frequenza di campionamento (\arabic{ms})}
+
+	\begin{itemize}
+
+		\item \listento{run: audacity \exampledir/downsample.wav}{Esperimento:}
+
+			\begin{itemize}
+
+				\item un brano campionato alle frequenze:
+                      1 Hz, 10 Hz, 100 Hz, 980 Hz, 
+                      5512.5 Hz, 11025 Hz, 22050 Hz, 44100 Hz
+
+					  \begin{center}
+						\pgfimage[height=0.58\textheight]{\imagedir/downsampling-explained}
+					  \end{center}
+			\end{itemize}
+
+	\end{itemize}
+
+\end{frame}

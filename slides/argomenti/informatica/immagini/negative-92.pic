@@ -1,0 +1,18 @@
+.PS
+scale=2.54
+boxsize=0.8
+boxht=boxsize
+boxwid=boxsize
+Sign: box "1"
+Number1: box with .w at Sign.e "0"
+Number2: box with .w at Number1.e "1"
+Number3: box with .w at Number2.e "0"
+Number4: box with .w at Number3.e "0"
+Number5: box with .w at Number4.e "1"
+Number6: box with .w at Number5.e "0"
+Number7: box with .w at Number6.e "0"
+box invis wid boxsize*3 with .w at Number7.e "= -92"
+Signlabel: box invis wid boxsize*6 with .nw at Sign.se + (0.1,-0.2) \
+	   "bit del segno"
+spline -> from Signlabel.w to Signlabel.w - (0.5,0) to Sign.s - (0,0.05)
+.PE
