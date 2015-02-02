@@ -10,14 +10,20 @@
 
     \begin{itemize}
 
-        \item Recupero modale:
+        \item Recupero modale xx:
 
             \begin{center}
                 \begin{figure}
                     \pgfimage[width=0.9\textwidth]{\imagedir/diatonic-modes}
                 \end{figure}
+              \listento{run: ogg123 \exampledir/doionico.ogg}{Do ionico}
+              \listento{run: ogg123 \exampledir/dodorico.ogg}{Do dorico}
+              \listento{run: ogg123 \exampledir/dofrigio.ogg}{Do frigio}
+              \listento{run: ogg123 \exampledir/dolidio.ogg}{Do lidio}
+              \listento{run: ogg123 \exampledir/domisolidio.ogg}{Do misolidio}
+              \listento{run: ogg123 \exampledir/doeolico.ogg}{Do eolico}
+              \listento{run: ogg123 \exampledir/dolocrio.ogg}{Do locrio}
             \end{center}
-            \listento{run: timidity \imagedir/diatonic-modes.midi}{}
 
     \end{itemize}
 
@@ -30,8 +36,7 @@
        \begin{center}
            \begin{figure}
                \pgfimage[width=0.9\textwidth]{\imagedir/bartok-sipc-score}
-               \caption{\listento{run: timidity \imagedir/bartok-sipc-score.midi}%
-                        {Bartok, \emph{Musica per Archi, Percussioni e Celesta}, IV, batt. 5-9 (solo melodia)}}
+               \caption{\listento{run: ogg123 \exampledir/bartok.ogg}{Bartok, \emph{Musica per Archi, Percussioni e Celesta}, IV, batt. 5-9 (solo melodia)}}
            \end{figure}
        \end{center}
 
