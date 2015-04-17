@@ -8,18 +8,18 @@ TARGET=slides.pdf
 DVI=$(TARGET:.pdf=.dvi)
 SRC=$(TARGET):.pdf=.dvi)
 AUX=$(TARGET):.pdf=.aux)
-ARGDIR=../../argomenti
+ARGDIR=../argomenti
 IMAGEDIR1=$(ARGDIR)/storia/immagini
 EXAMPLEDIR1=$(ARGDIR)/storia/esempi
 IMAGEDIRS=$(IMAGEDIR1)
 EXAMPLEDIRS=$(EXAMPLEDIR1)
-BEAMERDIR=../../../Elettroacustica/latex/beamer/sme-ccppd
+BEAMERDIR=../templates/smerm
 TEXINPUTS=".:$(BEAMERDIR):$(IMAGEDIRS):"
 PDFLATEX=TEXINPUTS=$(TEXINPUTS) pdflatex
 PDFLATEXINPUT='\newcommand{\printmode}{$(PRINTMODE)}\input{$<}'
 SLIDESVERSION=$$(svn info slides.tex | grep Revision: | cut -d ' ' -f 2)
 SLIDESDATE=$$(date +%Y%m%d)
-DISTNAME=Storia_III-Bernardini-v.$(SLIDESVERSION)-$(SLIDESDATE)-$(PRINTMODES)$(LECTNOS).pdf
+DISTNAME=TCMC-Bernardini-v.$(SLIDESVERSION)-$(SLIDESDATE)-$(PRINTMODES)$(LECTNOS).pdf
 DATADIR=.
 LECTURES=01 02 03 04 05 06
 ALL_LECTURES=lecture-all.tex
