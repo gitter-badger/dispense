@@ -1,17 +1,9 @@
 %
 % $Id: bartok-sipc-score.ly 77 2009-06-29 20:47:13Z nicb $
 %
-
 \version "2.10.33"
 
-\paper{
-  indent=0\mm
-  line-width=240\mm
-  oddFooterMarkup=##f
-  oddHeaderMarkup=##f
-  bookTitleMarkup = ##f
-  scoreTitleMarkup = ##f
-}
+\include "_setup.ly"
 
 \score {
 	\relative c'''  {

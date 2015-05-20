@@ -4,15 +4,7 @@
 
 \version "2.10.33"
 
-\paper{
-  indent=0\mm
-  line-width=140\mm
-  oddFooterMarkup=##f
-  oddHeaderMarkup=##f
-  bookTitleMarkup = ##f
-  scoreTitleMarkup = ##f
-  notime = ##t
-}
+\include "_setup.ly"
 
 \score {
     <<
