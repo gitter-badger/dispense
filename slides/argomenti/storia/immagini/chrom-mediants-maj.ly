@@ -4,14 +4,7 @@
 
 \version "2.10.33"
 
-\paper{
-  indent=0\mm
-  line-width=120\mm
-  oddFooterMarkup=##f
-  oddHeaderMarkup=##f
-  bookTitleMarkup = ##f
-  scoreTitleMarkup = ##f
-}
+\include "_setup.ly"
 
 Pianorh = \context Voice = Pianorh  {
 	\set Staff.midiInstrument = "acoustic grand"
