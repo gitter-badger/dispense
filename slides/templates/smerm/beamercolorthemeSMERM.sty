@@ -1,0 +1,35 @@
+%\ProvidesPackageRCS $Header: /cvsroot/management/project/meetings/06/09.26-Genova-HUMAINE_SS/slides/beamercolorthemeS2S2.sty,v 0.0 2006/09/26 04:36:11 nicb Exp $
+
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+%
+% Current theme LMAC by Julien Chiquet, May 2005
+
+\mode<presentation>
+
+% Gestion des couleurs 
+\definecolor{noir}{RGB}{0,0,0}
+\definecolor{fond}{RGB}{255,255,255}
+\definecolor{fis}{RGB}{61,60,120}
+\definecolor{lgray}{RGB}{217,217,217}
+\definecolor{dgray}{RGB}{107,129,178}
+
+\setbeamercolor{structure}{fg=noir,bg=fond}
+\setbeamercolor{titlelike}{use=structure,fg=fis,bg=fond}
+\setbeamercolor{title}{use=structure,fg=fis,bg=lgray}
+\setbeamercolor{block title}{fg=noir,bg=dgray}
+\setbeamercolor{block title alerted}{use=alerted text,fg=noir,bg=alerted text.fg!25!bg}
+\setbeamercolor{block title example}{use=example text,fg=noir,bg=example text.fg!25!bg}
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=lgray}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=lgray}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=lgray}
+\setbeamercolor{barhead}{fg=dgray,bg=lgray}
+\setbeamercolor{normal text}{fg=noir,bg=fond}
+\setbeamercolor{alerted text}{fg=fis,bg=fond}
+\setbeamercolor{background canvas}{parent=normal text}
+\setbeamercolor{background}{parent=background canvas}
+
+\mode
+<all>

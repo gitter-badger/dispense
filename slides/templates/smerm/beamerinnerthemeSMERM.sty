@@ -1,0 +1,77 @@
+%\ProvidesPackageRCS $Id: beamerinnerthemeSME-CCPPD.sty 978 2007-11-16 11:59:48Z nicb $
+
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\mode<presentation>
+
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{items}[square] 
+
+\def\inserttitleindicator{}
+\def\insertauthorindicator{Who?}
+\def\insertinstituteindicator{From?}
+\def\insertdateindicator{When?}
+
+% Title page
+\defbeamertemplate*{title page}{inmargin}
+{
+  \begin{beamercolorbox}[sep=8pt,center]{title}
+    \usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par
+    \usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle
+  \end{beamercolorbox}
+  \vfill
+  \ifx\insertauthor\@empty
+  \else
+  \begin{beamercolorbox}[sep=8pt,center]{author}
+    \usebeamercolor[fg]{author}\usebeamerfont{author}\insertauthor\par
+  \end{beamercolorbox}
+  \fi
+  \ifx\insertinstitute\@empty
+  \else
+  
+  \begin{beamercolorbox}[sep=8pt,center]{institute}
+    \usebeamercolor[fg]{institute}\usebeamerfont{institute}\insertinstitute\par
+  \end{beamercolorbox}
+  \fi
+  \ifx\insertdate\@empty
+  \else
+  
+  \begin{beamercolorbox}[sep=8pt,center]{date}
+    \usebeamercolor[fg]{date}\usebeamerfont{date}\insertdate\par
+  \end{beamercolorbox}
+  \fi
+
+  \vspace{10pt}
+  \begin{beamercolorbox}[center]{copyright}
+  	\begin{columns}[T]
+		\begin{column}{1.55cm}
+    		\usebeamercolor[fg]{date}\usebeamerfont{institute}
+  			\pgfimage[width=1.5cm]{cc}
+		\end{column}
+		\begin{column}{0.8\textwidth}
+		{\tiny
+			Copyright $\copyright$ {\cpyear}\ {\cpholder}\ 
+			$<$\href{mailto:\cpholderemail}{\cpholderemail}$>$\\
+			This work comes under the terms of the\\
+			Creative Commons $\copyright$ BY-SA 2.5 license\\%
+			(\href{http://creativecommons.org/licenses/by-sa/2.5/}%
+			{http://creativecommons.org/licenses/by-sa/2.5/})
+		}
+		\end{column}
+	\end{columns}
+  \end{beamercolorbox}
+}
+
+
+
+
+
+
+\mode<all>
+
+%%% Local Variables: 
+%%% TeX-master: "~/texmf/tex/latex/beamer/test/test.tex"
+%%% End: 

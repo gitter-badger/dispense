@@ -1,0 +1,171 @@
+%\ProvidesPackageRCS $Header$
+
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+%
+% Current beamertheme for SMERM
+% Nicola Bernardini, January 2015
+% Inspired from the beamertheme LMAC by Julien Chiquet, May 2005
+
+% __________________________________________________________________
+%
+% INCLUSION DES PACKAGES NECESSAIRES
+%\RequirePackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\RequirePackage{pgf}
+\RequirePackage{colortbl}
+\RequirePackage{amsmath,amssymb,amsfonts}
+
+
+\usecolortheme{SMERM}
+% __________________________________________________________________
+
+% __________________________________________________________________
+%
+% DEFINITIONS DIVERS
+
+% BARRE DE NAVIGUATION LATERALE
+\newdimen\beamer@sidebarwidth
+\usebeamerfont{frametitle}
+\beamer@sidebarwidth=3.5\baselineskip
+\reset@font
+\def\beamer@lefttext{left}
+\DeclareOptionBeamer{width}{\beamer@sidebarwidth=#1}
+\beamer@nav@subsectionstyle{show}
+
+% LES LOGOS : SMERM}
+\newlength\logoHeightLogo
+\newlength\logoWidthLogo
+\newlength\logoHeightIst
+\logoHeightLogo = 8ex
+\logoWidthLogo = 0.32\textwidth
+\logoHeightIst  = 7ex
+\pgfdeclareimage[width=\logoWidthLogo,interpolate=true]{SMERM}{sc-logo}
+
+% PERSONNALISATION DE LA BARRE DE NAVIGUATION (plus 'legere')
+\setbeamertemplate{navigation symbols}{
+    \insertframenavigationsymbol
+    \insertbackfindforwardnavigationsymbol
+}
+
+\setbeamercovered{dynamic}
+\setbeamersize{text margin left=0.15cm,text margin right=0.25cm}
+\setbeamerfont{date}{size=\scriptsize}
+\beamertemplatetransparentcovereddynamic
+
+\mode<presentation>
+% __________________________________________________________________
+%
+% ENTETE ET PIED DE PAGES
+
+% ENTETE
+\defbeamertemplate*{headline}{SMERM theme}
+{%
+  \leavevmode%
+  \advance\logoHeightLogo by 0.125ex%
+  \vbox{
+    \vskip0.1ex%
+    \hbox{        
+      \begin{beamercolorbox}[wd=.15\paperwidth,ht=\logoHeightLogo]{lgray}
+        \vbox to\logoHeightLogo{\vfil\pgfuseimage{SMERM}\vfill}
+      \end{beamercolorbox}
+      % Pas de Ligne verticale
+%      \vbox to10pt{
+%        \hbox{ 
+%          \hskip-0.05cm
+%          \vrule width.2pt height\paperheight \hfil}
+%        \vfil
+%        \vss
+%      }
+      \begin{beamercolorbox}[wd=.35\paperwidth,ht=\logoHeightLogo,leftskip=2cm,rightskip=.3cm plus1fil]{lgray}%
+        \vbox to\logoHeightLogo{\vfil\usebeamerfont{title in head/foot}\hbox{\hfil\insertshorttitle\hfil}\vfil}
+      \end{beamercolorbox}
+      \begin{beamercolorbox}[wd=.35\paperwidth,ht=\logoHeightLogo,leftskip=.3cm plus1fill,rightskip=.3cm]{lgray}%
+        \vbox to\logoHeightLogo{\vfil\usebeamerfont{author in head/foot}\hbox{\hfil \insertshortdate\hfil}\vfil}
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.15\paperwidth,ht=\logoHeightLogo,leftskip=.3cm,rightskip=.3cm plus1fil]{fond}%
+        \vbox to\logoHeightLogo{\vfil\usebeamerfont{title in head/foot}\hbox{\hfil \insertframenumber \ of\ \inserttotalframenumber\hfil}\vfil}
+      \end{beamercolorbox}%
+    }
+    %\vfill
+%     \vskip-7.5ex%
+%     % Barre horizontale
+%     \hbox{\hskip.230\paperwidth
+%       \begin{beamercolorbox}[wd=0.770\paperwidth,ht=0.25ex,dp=0.25ex,leftskip=.8cm,rightskip=.3cm plus1fil]{barhead}%
+%         \hfil \vfil \vfil \hfil
+%       \end{beamercolorbox}%
+%     }
+%    \vskip0.5ex%
+  }
+}
+
+% PIED DE PAGE
+% logo utc + naviguation interslides
+\defbeamertemplate*{footline}{SMERM theme}
+{%
+  \leavevmode%
+  \begin{beamercolorbox}[wd=.825\paperwidth]{white}
+    \hfill \hbox{\usebeamertemplate***{navigation symbols}}
+  \end{beamercolorbox}
+}
+% __________________________________________________________________
+
+% __________________________________________________________________
+%
+% PARTIE GAUCHE : SIDE BARRE
+\def\beamer@sidebarformat#1#2#3{%
+  \begin{beamercolorbox}[wd=\beamer@sidebarwidth,leftskip=#1,rightskip=2ex plus1fil,vmode]{#2}
+    \vbox{}%
+    #3\par%
+    \vbox{}%
+    \vskip-1.5ex%
+  \end{beamercolorbox}
+}
+
+% définition du style des sections, sous-section dans la barre 
+% de naviguation de gauche
+\defbeamertemplate*{section in sidebar}{SMERM theme}{%
+  \vbox{\vskip3ex\beamer@sidebarformat{2pt}{section in sidebar}{\insertsectionhead}}}
+\defbeamertemplate*{section in sidebar shaded}{SMERM theme}{%
+  \vbox{\vskip3ex\beamer@sidebarformat{2pt}{section in sidebar shaded}{\insertsectionhead}}}
+\defbeamertemplate*{subsection in sidebar}{SMERM theme}{%
+  \beamer@sidebarformat{4pt}{subsection in sidebar}{\insertsubsectionhead}}
+\defbeamertemplate*{subsection in sidebar shaded}{SMERM theme}{%
+  \beamer@sidebarformat{4pt}{subsection in sidebar shaded}{\insertsubsectionhead}}
+
+% format de la barre latérale
+\setbeamersize{sidebar width left=\beamer@sidebarwidth}
+\defbeamertemplate*{sidebar left}{SMERM theme}{%
+  \beamer@tempdim=\beamer@sidebarwidth%
+  \advance\beamer@tempdim by -6pt%
+  % titre de la barre de naviguation : 'PLAN'
+  {
+    \vskip1.5em
+    \hskip2pt%
+    \usebeamercolor[fg]{title in sidebar}%
+%    \begin{beamercolorbox}[wd=\beamer@sidebarwidth]{fond}%
+%      \vbox{\vfil\hbox{\hfil\usebeamerfont{title in sidebar}Plan\hfil}}
+%    \end{beamercolorbox}%
+    \vskip1.5em%
+  }%
+  % éléments de naviguation entre les sections...
+  \insertverticalnavigation{\beamer@sidebarwidth}%
+}%
+% __________________________________________________________________
+
+% __________________________________________________________________
+%
+% SIDEBAR A DROITE : RIEN... 
+%
+\defbeamertemplate*{sidebar right}{SMERM theme}{}
+% __________________________________________________________________
+
+% __________________________________________________________________
+%
+% INNER THEMES : PUCES A RECTANGLES
+%
+\useinnertheme{SMERM}
+% __________________________________________________________________
+
+
